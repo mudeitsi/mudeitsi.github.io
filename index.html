@@ -3,7 +3,9 @@
   <head>
     <title>Mudeizi</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Mudeizi - Portfolio of Minayo Mudeizi Esere. Software engineer & visual artist blending code as art." />
+    <meta name="author" content="Minayo Mudeizi Esere" />
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css'>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap">
@@ -27,7 +29,7 @@
             <li><a href="#art" class="menu-btn"><strong>Art</strong></a></li>
             <li><a href="#contact" class="menu-btn"><strong>Contact</strong></a></li>
           </ul>
-          <div class="menu-btn">
+          <div class="menu-btn" aria-label="Toggle menu" role="button" tabindex="0">
             <i class="fas fa-bars"></i>
           </div>
         </div>
@@ -40,7 +42,7 @@
             <div class="text-1">Hello, I'm</div>
             <div class="text-2">Minayo Mudeizi Esere</div>
             <div class="text-3">And I'm a <span class="typing"></span></div>
-            <a href="#">Let's Collaborate</a>
+            <a href="#contact">Let's Collaborate</a>
           </div>
         </div>
       </section>
@@ -63,7 +65,7 @@
               <p>I combine technical expertise with creative insight to craft solutions that are both functional and beautiful.  
                 Every project I touch is rooted in purpose and designed to resonate deeply. I am commited to excellence, empathy, and equity in collaboration.</p>
     
-              <a href="#link" target="blank">Resume</a>
+              <a href="#link" target="_blank" rel="noopener noreferrer">Resume</a>
             </div>
           </div>
         </div>
@@ -72,7 +74,7 @@
       <!-- Services -->
       <section class="services" id="services">
         <div class="max-width">
-          <h2 class="title">Services</h2>
+          <h2 class="title">What I Do</h2>
           <div class="serv-content">
             <div class="card">
               <div class="box">
@@ -92,7 +94,7 @@
               <div class="box">
                 <i class="fas fa-code"></i>
                 <div class="text">Apps Design</div>
-                <p>I encompasses both the user interface(UI) & user experience(UX). The overall style of the app, including things like the colour scheme, font selection, and the types of buttons and widgets which will use.</p>
+                <p>I encompasses both the user interface(UI) and user experience(UX): color palettes, typography, components and interaction patterns to create intuitive, beautiful apps.</p>
               </div>
             </div>
           </div>
@@ -107,23 +109,25 @@
             <div class="column left">
     
               <div class="text">INTERNSHIP</div>
-              <p>
-                <li class="intern">#Prodigy Infotech "Software Engineer"</li>
-                <li class="intern">#DailyScribed "Web Developer"</li>
-                <li class="intern">#HealthyPantry "Web Developer"</li>
-              </p>
+              <ul class="intern-list">
+                <li class="intern">Prodigy Infotech — Software Engineer</li>
+                <li class="intern">DailyScribed — Web Developer</li>
+                <li class="intern">HealthyPantry — Web Developer</li>
+              </ul>
+
     
               <br>
               <div class="text">PROJECT</div>
     
-              <p>
-                <li class="project">Mudeizi.dev Portfolio Website (HTML, CSS, JavaScript, Bootstraps)</li>
-                <li class="project">HealthyPantry Website (A health website) WordPress, HTML, CSS)</li>
-                <li class="project">OctaMart - eCommerce Website Clone (Like Amazon, Flipkart etc.)</li>
-                <li class="project">Fully Responsive Design Email Subscribe form</li>
-                <li class="project">DailyScribed Transcription Website (WordPress, HTML, CSS, Bootstraps)</li>
-                <li class="project">Currently Working on a Health app (For HealthyPantry)</li>
-              </p>
+              <ul class="project-list">
+                <li class="project">Mudeizi.dev Portfolio Website (HTML, CSS, JavaScript, Bootstrap)</li>
+                <li class="project">HealthyPantry Website (WordPress, HTML, CSS)</li>
+                <li class="project">OctaMart — eCommerce Clone</li>
+                <li class="project">Responsive Email Subscribe Form</li>
+                <li class="project">DailyScribed — Transcription Site (WordPress, HTML, CSS)</li>
+                <li class="project">Currently building: HealthyPantry mobile app</li>
+              </ul>
+
 
               <br>
               <div class="text">Creative Skills</div>
@@ -194,38 +198,46 @@
           <div class="carousel owl-carousel">
             <div class="card">
               <div class="box">
-                <img src="images/projects/octamart-thumb.jpg" alt="OctaMart project screenshot" alt="">
+                <img src="images/projects/octamart-thumb.jpg" alt="OctaMart project screenshot">
                 <div class="text">Ecommerce</div>
                 <p>OctaMart is clone of an innovative e-commerce web application offering a streamlined and user-friendly shopping experience.</p>
+                <a href="https://github.com/mudeitsi/OctaMart" target="_blank" rel="noopener noreferrer">View Project</a>
+
               </div>
             </div>
             <div class="card">
               <div class="box">
-                <img src="images/projects/portfolio-thumb.jpg" alt="Portfolio screenshot" alt="">
+                <img src="images/projects/portfolio-thumb.jpg" alt="Mudeizi portfolio screenshot">
                 <div class="text">Portfolio</div>
                 <p>Personal website that blends code and art that is built with HTML/CSS/JS and custom art gallery integrations.</p>
+                <a href="https://mudeizi.dev" target="_blank" rel="noopener noreferrer">View Project</a>
+
               </div>
             </div>
             <div class="card">
               <div class="box">
-                <img src="images/projects/daily-scribed.png" alt="DailyScribed Screenshot" alt="">
+                <img src="images/projects/daily-scribed.png" alt="DailyScribed transcription website screenshot">
                 <div class="text">Transcription Website</div>
                 <p>A professional transcription and translation service platform built on WordPress, delivering accurate, reliable, and fast language solutions.</p>
-                <a href="https://dailyscribed.com" target="_blank">View Project</a>
+                <a href="https://dailyscribed.com" target="_blank" rel="noopener noreferrer">View Project</a>
               </div>
             </div>
             <div class="card">
               <div class="box">
-                <img src="images/projects/wallet-logic.png" alt="WalletLogic app interface showing a dashboard with financial charts and transaction history in a clean, modern layout. The environment is a digital workspace focused on personal finance management. The tone is professional and organized. No visible text to transcribe.">
+                <img src="images/projects/wallet-logic.png" alt="WalletLogic budget app screenshot">
                 <div class="text">WalletLogic Budget App</div>
                 <p>#A simple yet powerful budget app designed to help users manage their finances effectively.</p>
+                <a href="https://github.com/mudeitsi/alx_capstone_project" target="_blank" rel="noopener noreferrer">View Project</a>
+
               </div>
             </div>
             <div class="card">
               <div class="box">
-                <img src="images/projects/healthy-pantry.png" alt="HealthyPantry Screenshot" alt="">
+                <img src="images/projects/healthy-pantry.png" alt="HealthyPantry health website screenshot" alt="">
                 <div class="text">Health Website</div>
                 <p>A WordPress-powered health and wellness platform that curates nutritious recipes, lifestyle tips, and food insights for everyday balance.</p>
+                <a href="https://healthypantryke.com" target="_blank" rel="noopener noreferrer">View Project</a>
+
               </div>
             </div>
             <div class="card">
@@ -271,7 +283,7 @@
                   <i class="fa-solid fa-envelope"></i>
                   <div class="info">
                     <div class="head">Email</div>
-                    <div class="sub-title"><a href="mailto:#" style="text-decoration: none; color: #333;"> info@mudeizi.com</a></div>
+                    <div class="sub-title"><a href="mailto:info@mudeizi.dev" style="text-decoration: none; color: #333;"> info@mudeizi.com</a></div>
                   </div>
                 </div>
     
@@ -288,11 +300,11 @@
                 <!-- Social -->
                 <div class="social-menu">
                   <ul>
-                    <li><a href="https//www.github.com/mudeitsi"><i class="fa-brands fa-github"></i></a></li>
-                    <li><a href="https//www.linkedin.com/in/minayo-esere"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                    <li><a href="https//www.instagram/@mu_deizi"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="https//www.twitter.com/@devmudeizi"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="https//www.tiktok.com/mudeitsi"><i class="fa-brands fa-tiktok"></i></a></li>
+                    <li><a href="https://github.com/mudeitsi" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/minayo-esere" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    <li><a href="https://www.instagram.com/mu_deizi" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://twitter.com/devmudeizi" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="https://www.tiktok.com/@mudeitsi" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a></li>
                   </ul>
                 </div>
               </div>
