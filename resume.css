@@ -1,0 +1,149 @@
+/* resume.css */
+
+/* General resume layout */
+.resume {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.resume .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Section headings */
+.resume h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #2d5a27; /* deep green */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Sub-section headings */
+.resume h3 {
+  font-size: 1.6rem;
+  margin: 30px 0 15px;
+  color: #444;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.resume h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #2d2d2d;
+}
+
+/* Contact info */
+.resume-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.resume-header h3 {
+  font-size: 2rem;
+  color: #111;
+}
+
+.resume-header p {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.resume-header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resume-header ul li {
+  margin: 5px 0;
+}
+
+.resume-header a {
+  color: #2d5a27;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.resume-header a:hover {
+  text-decoration: underline;
+}
+
+/* Summary */
+.resume-summary p {
+  background: #fff;
+  padding: 20px;
+  border-left: 5px solid #2d5a27;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+
+/* Skills and languages */
+.resume-skills ul,
+.resume-languages ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resume-skills li,
+.resume-languages li {
+  margin-bottom: 8px;
+}
+
+/* Projects & experience */
+.resume-projects div,
+.resume-experience div {
+  margin-bottom: 25px;
+  padding: 15px 20px;
+  background: #fff;
+  border-radius: 8px;
+  border-left: 4px solid #2d5a27;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.resume-projects ul,
+.resume-experience ul {
+  margin: 10px 0 0 20px;
+}
+
+.resume-projects a {
+  color: #2d5a27;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.resume-projects a:hover {
+  text-decoration: underline;
+}
+
+/* Interests section */
+.resume-interests p {
+  background: #fff;
+  padding: 15px 20px;
+  border-left: 5px solid #2d5a27;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resume {
+    padding: 40px 15px;
+  }
+
+  .resume h2 {
+    font-size: 2rem;
+  }
+
+  .resume h3 {
+    font-size: 1.4rem;
+  }
+}
