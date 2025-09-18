@@ -313,21 +313,27 @@
             <!-- Reach -->
             <div class="column right">
               <div class="text">Message me</div>
-              <form action="#">
+              <form action="https://formsubmit.co/info@mudeizi.dev" method="POST">
                 <div class="fields">
                   <div class="field name">
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" name="name" placeholder="Your Name" required>
                   </div>
                   <div class="field email">
-                    <input type="email" placeholder="Your Email" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
                   </div>
                 </div>
                 <div class="field">
-                  <input type="text" placeholder="Subject" required>
+                  <input type="text" name="subject" placeholder="Subject" required>
                 </div>
                 <div class="field textarea">
-                  <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
+                  <textarea name="message" cols="30" rows="10" placeholder="Message.." required></textarea>
                 </div>
+
+                <!-- Hidden fields for FormSubmit -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Contact Form Submission!">
+                <input type="hidden" name="_next" value="https://mudeizi.dev/thankyou.html">
+
                 <div class="button-area">
                   <button type="submit">Send message</button>
                 </div>
