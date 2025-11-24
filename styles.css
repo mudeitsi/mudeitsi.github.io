@@ -296,7 +296,9 @@ section .title::after {
 
 /*  About  */
 .about {
-  background: radial-gradient(var(--lilac), var(--sand));
+  background: #DDE4E7; /*flat state-gray background */
+  width: 100%;
+  padding: 120px 0;
 }
 
 .about .title::after {
