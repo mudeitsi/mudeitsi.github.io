@@ -133,6 +133,7 @@ section .title::after {
   padding: 30px 0;
   font-family: "Ubuntu", sans-serif;
   transition: all 0.3s ease;
+  background: var(--charcoal); /* always dark bar */
 }
 
 .navbar.sticky {
@@ -160,9 +161,11 @@ section .title::after {
   transition: all 0.3s ease;
 }
 
+/* keep same look when sticky */
 .navbar.sticky .logo a span {
-  -webkit-text-fill-color: #fff;
-  background: none;
+  background: linear-gradient(135deg, var(--violet), var(--sand), var(--teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .navbar .menu li {
@@ -234,7 +237,7 @@ section .title::after {
   background-size: cover;
   background-attachment: scroll;
   min-height: 80vh;
-  color: #fff;
+  color: var(--sand); /* soft light instead of pure white */
   font-family: "Ubuntu", sans-serif;
   padding: 60px 0;
 }
@@ -263,29 +266,30 @@ section .title::after {
   margin: 5px 0;
 }
 
-/* Linear Gradient */
+/* Highlight in clean teal instead of gradient */
 .home .home-content .text-3 span {
-  background: linear-gradient(135deg, var(--violet), var(--sand), var(--teal));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: var(--teal);
+  color: var(--teal);
   font-weight: 500;
 }
 
 .home .home-content a {
   display: inline-block;
-  background: var(--violet);
+  background: var(--teal);
   color: #fff;
   font-size: 25px;
   padding: 12px 36px;
   margin-top: 20px;
   font-weight: 400;
   border-radius: 6px;
-  border: 2px solid var(--violet);
+  border: 2px solid var(--teal);
   transition: all 0.3s ease;
 }
 
 .home .home-content a:hover {
-  color: var(--violet);
+  color: var(--teal);
   background: none;
   animation: pulsate 1s ease-in-out;
 }
@@ -710,6 +714,7 @@ section .title::after {
   border: 2px solid var(--violet);
   transition: all 0.3s ease;
 }
+
 .contact .right form .button-area button:hover {
   color: var(--violet);
   background: none;
@@ -721,7 +726,9 @@ section .title::after {
   background: var(--soft-gray);
 }
 
-.social-menu { margin-top: 18px; }
+.social-menu {
+  margin-top: 18px;
+}
 .social-menu ul {
   list-style: none;
   padding: 0;
@@ -743,7 +750,9 @@ section .title::after {
   transition: transform 0.3s ease;
   box-shadow: 0 5px 12px rgba(0,0,0,0.12);
 }
-.social-menu ul li a:hover { transform: translateY(-6px); }
+.social-menu ul li a:hover {
+  transform: translateY(-6px);
+}
 
 .social-menu ul li:nth-child(1) a:hover {
   background-color: #131418;
@@ -953,4 +962,19 @@ footer span a:hover {
   .hero-text {
     font-size: 14px;
   }
+}
+
+/* GLOBAL BRAND THEME OVERRIDES */
+body {
+  color: var(--charcoal); /* text */
+  background: var(--sand); /* soft sand */
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--charcoal);
+  font-family: "Poppins", sans-serif;
+}
+
+p, li, span {
+  color: var(--charcoal);
 }
