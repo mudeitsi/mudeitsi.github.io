@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mudeizi • Art Gallery</title>
+
+  <!-- main site styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- gallery-specific styles (you can move this into styles.css) -->
+  <style>
+    .art-gallery {
+      background: #f4f7f9; /* same as about/contact background */
+    }
+
+    .art-gallery .title::after {
+      content: "—Original Works—";
+    }
+
+    .gallery-intro {
+      max-width: 720px;
+      margin: 0 auto 40px;
+      text-align: center;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .art-card {
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .art-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .art-image img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .art-card:hover .art-image img {
+      transform: scale(1.04);
+    }
+
+    .art-body {
+      padding: 18px 18px 20px;
+    }
+
+    .art-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--charcoal);
+    }
+
+    .art-meta {
+      font-size: 0.82rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .art-meta span {
+      color: var(--teal);
+      font-weight: 500;
+    }
+
+    .art-description {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .art-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .art-tag {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(106, 44, 145, 0.08); /* soft violet */
+      color: var(--charcoal);
+    }
+
+    .art-tag--highlight {
+      background: rgba(45, 191, 169, 0.12); /* soft teal */
+    }
+
+    @media (max-width: 690px) {
+      .art-body {
+        padding: 16px 14px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar (reuse your existing markup – keep links consistent) -->
+  <nav class="navbar">
+    <div class="max-width">
+      <div class="logo">
+        <a href="index.html">Mudeizi<span>.dev</span></a>
+      </div>
+      <ul class="menu">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="art.html" class="active">Art</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ART GALLERY -->
+  <section class="art-gallery" id="art">
+    <div class="max-width">
+      <h2 class="title">Art Gallery</h2>
+
+      <div class="gallery-intro">
+        <p>
+          A selection of original works by Minayo Mudeizi Esere. Each piece
+          explores inner worlds, emotion, and perception through colour,
+          contrast, and symbolism. Click through or hover to read a short
+          description of the story behind each canvas.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <!-- 1. The Pull Within -->
+        <article class="art-card">
+          <div class="art-image">
+            <!-- replace with your actual image path -->
+            <img src="images/art/the-pull-within.jpg"
+                 alt="The Pull Within – surreal portrait of an African woman in transformation">
+          </div>
+          <div class="art-body">
+            <h3 class="art-title">The Pull Within</h3>
+            <p class="art-meta">
+              2025 &nbsp;•&nbsp; Mixed media on canvas &nbsp;•&nbsp;
+              <span>60 × 80 cm</span>
+            </p>
+            <p class="art-description">
+              A surreal self-portrait capturing the tension between past and
+              future selves. Fragmented forms and layered colour fields show the
+              invisible forces pulling a woman toward the life she is meant to
+              live.
+            </p>
+            <div class="art-tags">
+              <span class="art-tag art-tag--highlight">Surrealism</span>
+              <span class="art-tag">Inner journey</span>
+              <span class="art-tag">Feminine power</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. The Price of Vision -->
+        <article class="art-card">
+          <div class="art-image">
+            <img src="images/art/price-of-vision.jpg"
+                 alt="The Price of Vision – Kenyan man with a banknote over his eyes">
+          </div>
+          <div class="art-body">
+            <h3 class="art-title">The Price of Vision</h3>
+            <p class="art-meta">
+              2025 &nbsp;•&nbsp; Acrylic on canvas &nbsp;•&nbsp;
+              <span>50 × 70 cm</span>
+            </p>
+            <p class="art-description">
+              A portrait of a Kenyan man whose sight is covered by a
+              thousand-shilling note. The piece questions what we sacrifice
+              when money becomes our only lens for seeing the world.
+            </p>
+            <div class="art-tags">
+              <span class="art-tag art-tag--highlight">Social commentary</span>
+              <span class="art-tag">Portrait</span>
+              <span class="art-tag">Kenya</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Led by the Heart -->
+        <article class="art-card">
+          <div class="art-image">
+            <img src="images/art/led-by-the-heart.jpg"
+                 alt="Led by the Heart – a figure washing a brain with water from a heart">
+          </div>
+          <div class="art-body">
+            <h3 class="art-title">Led by the Heart</h3>
+            <p class="art-meta">
+              2025 &nbsp;•&nbsp; Acrylic & ink &nbsp;•&nbsp;
+              <span>50 × 60 cm</span>
+            </p>
+            <p class="art-description">
+              A poetic image of a man cleansing a brain with water flowing from
+              a heart, with a clock floating in the background. Logic,
+              intuition, and time meet in one ritual of surrender and renewal.
+            </p>
+            <div class="art-tags">
+              <span class="art-tag art-tag--highlight">Symbolism</span>
+              <span class="art-tag">Intuition</span>
+              <span class="art-tag">Time</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. The Pull of Becoming -->
+        <article class="art-card">
+          <div class="art-image">
+            <img src="images/art/pull-of-becoming.jpg"
+                 alt="The Pull of Becoming – African woman between shadow and light">
+          </div>
+          <div class="art-body">
+            <h3 class="art-title">The Pull of Becoming</h3>
+            <p class="art-meta">
+              2025 &nbsp;•&nbsp; Mixed media &nbsp;•&nbsp;
+              <span>60 × 80 cm</span>
+            </p>
+            <p class="art-description">
+              Dual tones and mirrored silhouettes show a woman standing between
+              who she was taught to be and who she truly is. The piece honours
+              the discomfort and beauty of transformation.
+            </p>
+            <div class="art-tags">
+              <span class="art-tag art-tag--highlight">Identity</span>
+              <span class="art-tag">Duality</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Roar of Return -->
+        <article class="art-card">
+          <div class="art-image">
+            <img src="images/art/roar-of-return.jpg"
+                 alt="Roar of Return – lion and woman in golden light">
+          </div>
+          <div class="art-body">
+            <h3 class="art-title">Roar of Return</h3>
+            <p class="art-meta">
+              2025 &nbsp;•&nbsp; Acrylic on canvas &nbsp;•&nbsp;
+              <span>60 × 80 cm</span>
+            </p>
+            <p class="art-description">
+              A lion and a woman share one gaze, bathed in warm gold. This work
+              celebrates courage, self-trust, and the moment you finally return
+              to your own voice.
+            </p>
+            <div class="art-tags">
+              <span class="art-tag art-tag--highlight">Leo energy</span>
+              <span class="art-tag">Courage</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- EXTRA SLOT – small portraits / commissions -->
+        <article class="art-card">
+          <div class="art-image">
+            <img src="images/art/portrait-collection.jpg"
+                 alt="Selection of portrait commissions by Mudeizi">
+          </div>
+          <div class="art-body">
+            <h3 class="art-title">Portrait Commissions</h3>
+            <p class="art-meta">
+              Custom work &nbsp;•&nbsp; Digital & traditional
+            </p>
+            <p class="art-description">
+              Bespoke portraits that honour real stories. Available in digital
+              or traditional formats, with options for symbolic elements woven
+              into the background.
+            </p>
+            <div class="art-tags">
+              <span class="art-tag art-tag--highlight">Commission</span>
+              <span class="art-tag">Portrait</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (reuse your existing one) -->
+  <footer>
+    <span>© <script>document.write(new Date().getFullYear());</script>
+      Mudeizi. All rights reserved.</span>
+  </footer>
+
+  <!-- your existing JS (menu toggle, scroll-up, etc.) -->
+  <script src="script.js"></script>
+</body>
+</html>
