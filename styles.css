@@ -5,6 +5,19 @@
   text-decoration: none;
 }
 
+/* Brand palette */
+:root {
+  --violet: #6A2C91;
+  --teal: #2DBFA9;
+  --sand: #F7EED6;
+  --gold: #E3B641;
+  --lilac: #CBB6E9;
+  --charcoal: #2C2C2C;
+  --soft-gray: #E5E5E5;
+  --text-dark: #1A1A1A;
+  --text-light: #F9F9F9;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -42,14 +55,14 @@ html {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 12px;
-  background: linear-gradient(135deg, #f57308, #fff, rgb(11, 242, 7));
+  background: linear-gradient(135deg, var(--violet), var(--sand), var(--teal));
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #1a6ad2, #fff, rgb(245, 5, 53));
+  background: linear-gradient(135deg, var(--charcoal), var(--sand), var(--gold));
 }
 
-/*  Simillar  */
+/*  Similar  */
 
 section {
   padding: 100px 0;
@@ -67,7 +80,7 @@ section {
 .projects,
 .contact,
 footer {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", "Poppins", "Ubuntu", sans-serif;
 }
 
 .about .about-content,
@@ -88,6 +101,7 @@ section .title {
   margin-bottom: 60px;
   padding-bottom: 20px;
   font-family: "Ubuntu", sans-serif;
+  color: var(--charcoal);
 }
 
 section .title::before {
@@ -98,6 +112,7 @@ section .title::before {
   width: 180px;
   height: 3px;
   transform: translateX(-50%);
+  background: var(--teal);
 }
 
 section .title::after {
@@ -105,7 +120,7 @@ section .title::after {
   bottom: -8px;
   left: 50%;
   font-size: 20px;
-  color: #1e3551;
+  color: var(--violet);
   padding: 0 5px;
   transform: translateX(-50%);
 }
@@ -122,7 +137,7 @@ section .title::after {
 
 .navbar.sticky {
   padding: 15px 0;
-  background: #1e3551;
+  background: var(--charcoal);
 }
 
 .navbar .max-width {
@@ -139,14 +154,15 @@ section .title::after {
 
 /*  Nav Logo Span Linear-Gradient  */
 .navbar .logo a span {
-  background: linear-gradient(135deg, #041d3d, #fff, crimson);
+  background: linear-gradient(135deg, var(--violet), var(--sand), var(--teal));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease;
 }
 
 .navbar.sticky .logo a span {
-  color: #fff;
+  -webkit-text-fill-color: #fff;
+  background: none;
 }
 
 .navbar .menu li {
@@ -164,11 +180,11 @@ section .title::after {
 }
 
 .navbar .menu li a:hover {
-  color: #1e3551;
+  color: var(--teal);
 }
 
 .navbar.sticky .menu li a:hover {
-  color: #fff;
+  color: var(--sand);
 }
 
 /*  Menu Btn  */
@@ -183,7 +199,7 @@ section .title::after {
   position: fixed;
   height: 45px;
   width: 42px;
-  background: #1e3551;
+  background: var(--violet);
   right: 30px;
   bottom: 10px;
   text-align: center;
@@ -216,13 +232,12 @@ section .title::after {
   justify-content: center;
   background: url("images/hero.jpg") no-repeat center center;
   background-size: cover;
-  background-attachment: scroll; /* safer on mobile */
+  background-attachment: scroll;
   min-height: 80vh;
   color: #fff;
   font-family: "Ubuntu", sans-serif;
   padding: 60px 0;
 }
-
 
 .home .max-width {
   width: 100%;
@@ -250,8 +265,7 @@ section .title::after {
 
 /* Linear Gradient */
 .home .home-content .text-3 span {
-  color: #1e3551;
-  background: linear-gradient(135deg, #041d3d, #fff, crimson);
+  background: linear-gradient(135deg, var(--violet), var(--sand), var(--teal));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 500;
@@ -259,27 +273,28 @@ section .title::after {
 
 .home .home-content a {
   display: inline-block;
-  background: #1e3551;
+  background: var(--violet);
   color: #fff;
   font-size: 25px;
   padding: 12px 36px;
   margin-top: 20px;
   font-weight: 400;
   border-radius: 6px;
-  border: 2px solid #1e3551;
+  border: 2px solid var(--violet);
   transition: all 0.3s ease;
 }
 
 .home .home-content a:hover {
-  color: #1e3551;
+  color: var(--violet);
   background: none;
   animation: pulsate 1s ease-in-out;
 }
 
 /*  About  */
 .about {
-  background: radial-gradient(#e1efff, white);
+  background: radial-gradient(var(--lilac), var(--sand));
 }
+
 .about .title::after {
   content: "—Who I Am ?—";
   text-overflow: ellipsis;
@@ -311,10 +326,9 @@ section .title::after {
   margin-bottom: 10px;
 }
 
-/* Linear Gradiant */
+/* Linear Gradient */
 .about .about-content .right .text span {
-  /* color: #1e3551; */
-  background: linear-gradient(135deg, #041d3d, #fff, crimson);
+  background: linear-gradient(135deg, var(--violet), var(--sand), var(--teal));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -325,19 +339,19 @@ section .title::after {
 
 .about .about-content .right a {
   display: inline-block;
-  background: #1e3551;
+  background: var(--violet);
   color: #fff;
   font-size: 20px;
   font-weight: 500;
   padding: 10px 30px;
   margin-top: 20px;
   border-radius: 6px;
-  border: 2px solid #1e3551;
+  border: 2px solid var(--violet);
   transition: all 0.3s ease;
 }
 
 .about .about-content .right a:hover {
-  color: #1e3551;
+  color: var(--violet);
   background: none;
   animation: pulsate 1s ease-in-out;
 }
@@ -346,23 +360,23 @@ section .title::after {
 .services,
 .projects {
   color: #fff;
-  background: #111;
+  background: var(--charcoal);
 }
 
 .services .title::before,
 .projects .title::before {
-  background: #fff;
+  background: var(--teal);
 }
 
 .services .title::after,
 .projects .title::after {
-  background: #111;
+  background: var(--charcoal);
   content: "What I Do";
 }
 
 .services .serv-content .card {
   width: calc(33% - 20px);
-  background: #222;
+  background: #3E3E54;
   text-align: center;
   border-radius: 10px;
   padding: 50px 25px;
@@ -371,7 +385,7 @@ section .title::after {
 }
 
 .services .serv-content .card:hover {
-  background: #1e3551;
+  background: var(--violet);
 }
 
 .services .serv-content .card .box {
@@ -384,15 +398,14 @@ section .title::after {
 
 .services .serv-content .card i {
   font-size: 50px;
-  color: #888e8d;
-  background: linear-gradient(135deg, #041d3d, #fff, crimson);
+  background: linear-gradient(135deg, var(--teal), var(--sand), var(--violet));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: color 0.3s ease;
 }
 
 .services .serv-content .card:hover i {
-  color: #fff;
+  -webkit-text-fill-color: #fff;
 }
 
 .services .serv-content .card .text {
@@ -403,8 +416,9 @@ section .title::after {
 
 /*  Skills  */
 .skills {
-  background: radial-gradient(#e1efff, white);
+  background: radial-gradient(var(--lilac), #ffffff);
 }
+
 .skills .title::after {
   content: "—What I Know ?—";
 }
@@ -425,19 +439,19 @@ section .title::after {
 
 .skills .skills-content .left a {
   display: inline-block;
-  background: #1e3551;
+  background: var(--violet);
   color: #fff;
   font-size: 18px;
   font-weight: 500;
   padding: 8px 16px;
   margin-top: 20px;
   border-radius: 6px;
-  border: 2px solid #1e3551;
+  border: 2px solid var(--violet);
   transition: all 0.3s ease;
 }
 
 .skills .skills-content .left a:hover {
-  color: #1e3551;
+  color: var(--violet);
   background: none;
   animation: pulsate 1s ease-in-out;
 }
@@ -450,7 +464,7 @@ section .title::after {
 .intern::before,
 .project::before {
   content: "✪ ";
-  color: #1e3551;
+  color: var(--violet);
 }
 
 .skills .skills-content .right .bars {
@@ -482,7 +496,7 @@ section .title::after {
   height: 100%;
   left: 0;
   top: 0;
-  background: #1e3551;
+  background: var(--teal);
 }
 
 .skills-content .right .python::before {
@@ -515,7 +529,7 @@ section .title::after {
 }
 
 .projects .carousel .card {
-  background: #222;
+  background: #3E3E54;
   border-radius: 6px;
   padding: 25px 35px;
   text-align: center;
@@ -524,7 +538,7 @@ section .title::after {
 }
 
 .projects .carousel .card:hover {
-  background: #1e3551;
+  background: var(--violet);
 }
 
 .projects .carousel .card .box {
@@ -550,7 +564,7 @@ section .title::after {
   width: 220px;
   object-fit: cover;
   border-radius: 12px;
-  border: 4px solid #888c8d;
+  border: 4px solid var(--teal);
   transition: all 0.3s ease;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
@@ -581,12 +595,12 @@ section .title::after {
 
 .owl-dot.active,
 .owl-dot:hover {
-  background: #18365a !important;
+  background: var(--violet) !important;
 }
 
 /*  Contact  */
 .contact {
-  background: radial-gradient(#e1efff, white);
+  background: radial-gradient(var(--lilac), #ffffff);
 }
 
 .contact .title::after {
@@ -623,7 +637,7 @@ section .title::after {
 
 .contact .contact-content .row i {
   font-size: 25px;
-  color: #1e3551;
+  color: var(--teal);
 }
 
 .contact .contact-content .info .head {
@@ -664,13 +678,13 @@ section .title::after {
   outline: none;
   padding: 0 15px;
   font-size: 17px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", "Poppins", sans-serif;
   transition: all 0.3s ease;
 }
 
 .contact .right form .field input:focus,
 .contact .right form .textarea textarea:focus {
-  border-color: #b3b3b3;
+  border-color: var(--teal);
 }
 
 .contact .right form .textarea textarea {
@@ -692,19 +706,19 @@ section .title::after {
   font-weight: 500;
   border-radius: 6px;
   cursor: pointer;
-  background: #1e3551;
-  border: 2px solid #1e3551;
+  background: var(--violet);
+  border: 2px solid var(--violet);
   transition: all 0.3s ease;
 }
 .contact .right form .button-area button:hover {
-  color: #1e3551;
+  color: var(--violet);
   background: none;
   animation: pulsate 1s ease-in-out;
 }
 
 /*  Social  */
 .col-4 {
-  background: #d8d8d8;
+  background: var(--soft-gray);
 }
 
 .social-menu { margin-top: 18px; }
@@ -725,15 +739,11 @@ section .title::after {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background-color: #1e3551;
+  background-color: var(--violet);
   transition: transform 0.3s ease;
   box-shadow: 0 5px 12px rgba(0,0,0,0.12);
 }
 .social-menu ul li a:hover { transform: translateY(-6px); }
-
-.social-menu ul li a:hover {
-  transform: translate(0, -10px);
-}
 
 .social-menu ul li:nth-child(1) a:hover {
   background-color: #131418;
@@ -768,14 +778,14 @@ section .title::after {
 
 /*  Footer  */
 footer {
-  background: #111;
+  background: var(--charcoal);
   padding: 6px 16px;
   color: #888c8d;
   text-align: center;
 }
 
 footer span a {
-  color: #1e3551;
+  color: var(--teal);
   text-decoration: none;
 }
 
@@ -786,7 +796,7 @@ footer span a:hover {
 /*  Media Query  */
 @keyframes pulsate {
   0% {
-    box-shadow: 0 0 25px #888e8d, 0 0 50px #1e3551;
+    box-shadow: 0 0 25px var(--teal), 0 0 50px var(--violet);
   }
 }
 
@@ -821,7 +831,7 @@ footer span a:hover {
     width: 100%;
     left: -100%;
     top: 0;
-    background: #111;
+    background: var(--charcoal);
     text-align: center;
     padding-top: 80px;
     transition: all 0.3s ease;
@@ -920,6 +930,7 @@ footer span a:hover {
     line-height: 38px;
   }
 }
+
 @media (max-width: 768px) {
   .about-text {
     width: 100%;
@@ -932,8 +943,8 @@ footer span a:hover {
 @media (max-width: 768px) {
   .hamburger {
     position: absolute;
-    right: 20px; /* adjust space from the right */
-    top: 20px;   /* adjust space from the top if needed */
+    right: 20px;
+    top: 20px;
   }
 }
 
@@ -943,5 +954,3 @@ footer span a:hover {
     font-size: 14px;
   }
 }
-
-
