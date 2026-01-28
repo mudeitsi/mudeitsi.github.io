@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!--
+    Document: Art Gallery page
+    Purpose: Displays a grid of original artworks as cards (image, title, meta, description, tags).
+    Notes:
+      - This file relies on your shared design system variables in styles.css (for example, --charcoal, --teal).
+      - Only the debut project descriptions and the title rename from "Led by the Heart" to "Lead from the Heart"
+        have been updated as requested. All colors, layout, and non-debut content are kept the same.
+  -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mudeizi • Art Gallery</title>
@@ -8,7 +16,11 @@
   <!-- main site styles -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- gallery-specific styles (you can move this into styles.css) -->
+  <!--
+    Gallery-specific styles
+    You can move this into styles.css later if you want a single stylesheet.
+    Keeping it here preserves your current structure and avoids changing unrelated parts of the site.
+  -->
   <style>
     .art-gallery {
       background: #f4f7f9; /* same as about/contact background */
@@ -116,7 +128,11 @@
 </head>
 <body>
 
-  <!-- Navbar (reuse your existing markup – keep links consistent) -->
+  <!--
+    Navbar
+    Purpose: Consistent navigation across your site pages.
+    Note: Keeping markup unchanged so it matches your existing JS (menu toggle, scroll behavior, active link styles).
+  -->
   <nav class="navbar">
     <div class="max-width">
       <div class="logo">
@@ -136,11 +152,24 @@
     </div>
   </nav>
 
-  <!-- ART GALLERY -->
+  <!--
+    ART GALLERY SECTION
+    Purpose:
+      - Introduces your work
+      - Shows a responsive grid of art cards
+    Structure:
+      - .gallery-intro: short page intro
+      - .gallery-grid: contains multiple <article class="art-card"> entries
+  -->
   <section class="art-gallery" id="art">
     <div class="max-width">
       <h2 class="title">Art Gallery</h2>
 
+      <!--
+        Intro text
+        Purpose: Sets the tone for visitors and explains what they are viewing.
+        Note: Kept as-is per your request to only change the debut project content.
+      -->
       <div class="gallery-intro">
         <p>
           A selection of original works by Minayo Mudeizi Esere. Each piece
@@ -150,9 +179,28 @@
         </p>
       </div>
 
+      <!--
+        GALLERY GRID
+        Purpose: Responsive layout for cards.
+        Each card includes:
+          - Image with alt text for accessibility and SEO
+          - Title
+          - Meta line (year, medium, size)
+          - Short description
+          - Tags
+      -->
       <div class="gallery-grid">
 
-        <!-- 1. The Pull Within -->
+        <!--
+          Debut Project Piece 1 of 4
+          Title: Pull Within
+          Note:
+            - Removed the word "The" from the visible title as requested.
+            - Updated ONLY the debut description paragraph text to the exact provided text.
+            - Updated ONLY the debut tag visible text to the exact provided text.
+            - Updated ONLY the size <span> text to the exact provided text.
+            - Kept year and medium unchanged as instructed.
+        -->
         <article class="art-card">
           <div class="art-image">
             <!-- replace with your actual image path -->
@@ -160,76 +208,93 @@
                  alt="The Pull Within – surreal portrait of an African woman in transformation">
           </div>
           <div class="art-body">
-            <h3 class="art-title">The Pull Within</h3>
+            <h3 class="art-title">Pull Within</h3>
             <p class="art-meta">
               2025 &nbsp;•&nbsp; Mixed media on canvas &nbsp;•&nbsp;
-              <span>60 × 80 cm</span>
+              <span>4 ft × 4 ft (121.9 × 121.9 cm)</span>
             </p>
             <p class="art-description">
-              A surreal self-portrait capturing the tension between past and
-              future selves. Fragmented forms and layered colour fields show the
-              invisible forces pulling a woman toward the life she is meant to
-              live.
+              A surreal portrayal of an African woman held between shadow and light as multiple inner selves pull at her from behind. The work explores inner conflict, self recognition, and the tension between who one has been and who one is becoming.
             </p>
             <div class="art-tags">
-              <span class="art-tag art-tag--highlight">Surrealism</span>
-              <span class="art-tag">Inner journey</span>
-              <span class="art-tag">Feminine power</span>
+              <span class="art-tag art-tag--highlight">Contemporary Art</span>
+              <span class="art-tag">Identity</span>
+              <span class="art-tag">Human Experience</span>
             </div>
           </div>
         </article>
 
-        <!-- 2. The Price of Vision -->
+        <!--
+          Debut Project Piece 2 of 4
+          Title: Price of Vision
+          Note:
+            - Removed the word "The" from the visible title as requested.
+            - Updated ONLY the debut description paragraph text to the exact provided text.
+            - Updated ONLY the debut tag visible text to the exact provided text.
+            - Updated ONLY the size <span> text to the exact provided text.
+            - Kept year and medium unchanged as instructed.
+        -->
         <article class="art-card">
           <div class="art-image">
             <img src="images/art/price-of-vision.jpg"
                  alt="The Price of Vision – Kenyan man with a banknote over his eyes">
           </div>
           <div class="art-body">
-            <h3 class="art-title">The Price of Vision</h3>
+            <h3 class="art-title">Price of Vision</h3>
             <p class="art-meta">
               2025 &nbsp;•&nbsp; Acrylic on canvas &nbsp;•&nbsp;
-              <span>50 × 70 cm</span>
+              <span>100 × 50 cm (3.28 × 1.64 ft)</span>
             </p>
             <p class="art-description">
-              A portrait of a Kenyan man whose sight is covered by a
-              thousand-shilling note. The piece questions what we sacrifice
-              when money becomes our only lens for seeing the world.
+              A striking portrait of a Kenyan man whose eyes are covered by a thousand shilling note. The work examines how economic systems influence perception, obedience, and fear, questioning what is lost when money becomes the primary lens through which reality is viewed.
             </p>
             <div class="art-tags">
-              <span class="art-tag art-tag--highlight">Social commentary</span>
-              <span class="art-tag">Portrait</span>
-              <span class="art-tag">Kenya</span>
+              <span class="art-tag art-tag--highlight">Contemporary Art</span>
+              <span class="art-tag">Perception</span>
+              <span class="art-tag">Cultural Dialogue</span>
             </div>
           </div>
         </article>
 
-        <!-- 3. Led by the Heart -->
+        <!--
+          Debut Project Piece 3 of 4
+          IMPORTANT:
+            - Removed the word "The" from the visible title wherever it appears.
+            - Corrected title to "Lead from the Heart" (keep "Lead", not "Led").
+          Note:
+            - Image path left unchanged to avoid breaking your folder structure.
+            - Updated ONLY the debut description paragraph text to the exact provided text.
+            - Updated ONLY the debut tag visible text to the exact provided text.
+            - Updated ONLY the size <span> text to the exact provided text.
+            - Kept year and medium unchanged as instructed.
+        -->
         <article class="art-card">
           <div class="art-image">
             <img src="images/art/led-by-the-heart.jpg"
-                 alt="Led by the Heart – a figure washing a brain with water from a heart">
+                 alt="Lead from the Heart – a figure washing a brain with water from a heart">
           </div>
           <div class="art-body">
-            <h3 class="art-title">Led by the Heart</h3>
+            <h3 class="art-title">Lead from the Heart</h3>
             <p class="art-meta">
               2025 &nbsp;•&nbsp; Acrylic & ink &nbsp;•&nbsp;
-              <span>50 × 60 cm</span>
+              <span>4 ft × 4 ft (121.9 × 121.9 cm)</span>
             </p>
             <p class="art-description">
-              A poetic image of a man cleansing a brain with water flowing from
-              a heart, with a clock floating in the background. Logic,
-              intuition, and time meet in one ritual of surrender and renewal.
+              A young African man kneels at the shoreline, cleansing a human brain with water flowing from a glowing heart. The work centers intuition, emotional intelligence, and inner leadership, presenting the heart as a guide that softens thought and restores balance between intellect and embodied knowing.
             </p>
             <div class="art-tags">
-              <span class="art-tag art-tag--highlight">Symbolism</span>
-              <span class="art-tag">Intuition</span>
-              <span class="art-tag">Time</span>
+              <span class="art-tag art-tag--highlight">Contemporary Art</span>
+              <span class="art-tag">Inner Leadership</span>
+              <span class="art-tag">Human Experience</span>
             </div>
           </div>
         </article>
 
-        <!-- 4. RNB Mural -->
+        <!--
+          Non-debut project content
+          Title: RNB Mural
+          Note: Kept unchanged per your instruction.
+        -->
         <article class="art-card">
           <div class="art-image">
             <img src="images\art\RNB Mural Full Logo.jpg"
@@ -251,7 +316,16 @@
           </div>
         </article>
 
-        <!-- 5. Roar of Return -->
+        <!--
+          Debut Project Piece 4 of 4
+          Title: Roar of Return
+          Note:
+            - Title remains unchanged (no "The" present).
+            - Updated ONLY the debut description paragraph text to the exact provided text.
+            - Updated ONLY the debut tag visible text to the exact provided text.
+            - Updated ONLY the size <span> text to the exact provided text.
+            - Kept year and medium unchanged as instructed.
+        -->
         <article class="art-card">
           <div class="art-image">
             <img src="images/art/roar-of-return.jpg"
@@ -261,21 +335,24 @@
             <h3 class="art-title">Roar of Return</h3>
             <p class="art-meta">
               2025 &nbsp;•&nbsp; Acrylic on canvas &nbsp;•&nbsp;
-              <span>60 × 80 cm</span>
+              <span>4 ft × 4 ft (121.9 × 121.9 cm)</span>
             </p>
             <p class="art-description">
-              A lion and a woman share one gaze, bathed in warm gold. This work
-              celebrates courage, self-trust, and the moment you finally return
-              to your own voice.
+              A woman and a lion meet in a shared gaze, representing the moment of reclaiming self trust and personal authority. The work speaks to courage, remembrance, and the return to one’s authentic voice after periods of suppression or self doubt.
             </p>
             <div class="art-tags">
-              <span class="art-tag art-tag--highlight">Leo energy</span>
-              <span class="art-tag">Courage</span>
+              <span class="art-tag art-tag--highlight">Contemporary Art</span>
+              <span class="art-tag">Identity</span>
+              <span class="art-tag">Cultural Dialogue</span>
             </div>
           </div>
         </article>
 
-        <!-- EXTRA SLOT – small portraits / commissions -->
+        <!--
+          EXTRA SLOT
+          Portrait commissions are not part of the debut project.
+          Note: Kept unchanged per your instruction.
+        -->
         <article class="art-card">
           <div class="art-image">
             <img src="images/art/portrait-collection.jpg"
@@ -302,13 +379,21 @@
     </div>
   </section>
 
-  <!-- Footer (reuse your existing one) -->
+  <!--
+    Footer
+    Purpose: Site-wide footer with dynamic year.
+    Note: Kept unchanged.
+  -->
   <footer>
     <span>© <script>document.write(new Date().getFullYear());</script>
       Mudeizi. All rights reserved.</span>
   </footer>
 
-  <!-- your existing JS (menu toggle, scroll-up, etc.) -->
+  <!--
+    Existing JS
+    Purpose: Your current site interactions (menu toggle, scrolling, etc.).
+    Note: Kept unchanged to avoid breaking behavior across pages.
+  -->
   <script src="script.js"></script>
 </body>
 </html>
