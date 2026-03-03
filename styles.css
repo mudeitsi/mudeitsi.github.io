@@ -338,7 +338,7 @@ section .title::after {
 }
 
 .about .title::after {
-  content: "—Who I Am—";
+  content: "Who I Am";
 }
 
 .about .about-content .left {
@@ -466,7 +466,7 @@ section .title::after {
 }
 
 .skills .title::after {
-  content: "—What I Know—";
+  content: "What I Know";
 }
 
 .skills .skills-content .column {
@@ -669,7 +669,7 @@ section .title::after {
 }
 
 .contact .title::after {
-  content: "—Get in Touch—";
+  content: "Get in Touch";
 }
 
 .contact .contact-content .column {
