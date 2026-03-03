@@ -173,13 +173,16 @@ section .title::after {
 .navbar .logo a {
   display: inline-flex;
   align-items: center;
+  height: 42px;
+  overflow: visible;
 }
 
 .navbar .logo .brand-logo {
   display: block;
-  width: 220px;
-  max-width: 42vw;
-  height: auto;
+  height: 42px;
+  width: auto;
+  transform: scale(4);
+  transform-origin: left center;
 }
 
 /* Menu */
@@ -997,7 +1000,9 @@ footer span a:hover {
   }
 
   .navbar .logo .brand-logo {
-    width: 180px;
+    height: 34px;
+    width: auto;
+    transform: scale(3.5);
   }
 
   .home .home-content .text-2 {
@@ -1019,8 +1024,9 @@ footer span a:hover {
 
 @media (max-width: 500px) {
   .navbar .logo .brand-logo {
-    width: 155px;
-    max-width: 56vw;
+    height: 30px;
+    width: auto;
+    transform: scale(3);
   }
 
   .home .home-content .text-2 {
