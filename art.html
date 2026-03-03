@@ -157,31 +157,28 @@
 
   <!--
     ART GALLERY SECTION
-    Purpose:
-      - Introduces your work
-      - Shows a responsive grid of art cards
-    Structure:
-      - .gallery-intro: short page intro
-      - .gallery-grid: contains multiple <article class="art-card"> entries
-  -->
-  <section class="art-gallery" id="art">
-    <div class="max-width">
-      <h2 class="title">Art Gallery</h2>
-
-      <!--
-        Intro text
-        Purpose: Sets the tone for visitors and explains what they are viewing.
-        Note: Kept as-is per your request to only change the debut project content.
-      -->
-      <div class="gallery-intro">
-        <p>
-          A selection of original works by Minayo Mudeizi Esere. Each piece
-          explores inner worlds, emotion, and perception through colour,
-          contrast, and symbolism. Click through or hover to read a short
-          description of the story behind each canvas.
-        </p>
+    <!-- Header (copied from index.html for exact parity) -->
+    <nav class="navbar">
+      <div class="max-width">
+        <div class="logo">
+          <a href="#" aria-label="Mudeizi home">
+            <img class="brand-logo" src="images/branding/Mudeizi Official Logo Landscape.png" alt="Mudeizi logo" />
+          </a>
+        </div>
+        <ul class="menu">
+          <li><a href="#home" class="menu-btn"><strong>Home</strong></a></li>
+          <li><a href="#about" class="menu-btn"><strong>About</strong></a></li>
+          <li><a href="#services" class="menu-btn"><strong>What I Do</strong></a></li>
+          <li><a href="#skills" class="menu-btn"><strong>Skills</strong></a></li>
+          <li><a href="#projects" class="menu-btn"><strong>Projects</strong></a></li>
+          <li><a href="#contact" class="menu-btn"><strong>Contact</strong></a></li>
+          <li><a href="art.html"><strong>Art</strong></a></li>
+        </ul>
+        <div class="menu-btn" aria-label="Toggle menu" role="button" tabindex="0">
+          <i class="fas fa-bars"></i>
+        </div>
       </div>
-
+    </nav>
       <div class="gallery-grid">
 
         <!-- Pull Within (unchanged image) -->
