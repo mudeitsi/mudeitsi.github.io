@@ -44,7 +44,7 @@ $(document).ready(function () {
       "Software Developer",
       "Python Developer",
       "Founder",
-      "Author"
+      "Artist"
     ],
     typeSpeed: 100,
     backSpeed: 60,
@@ -57,7 +57,7 @@ $(document).ready(function () {
       "Software Developer",
       "Python Developer",
       "Founder",
-      "Author"
+      "Artist"
     ],
     typeSpeed: 100,
     backSpeed: 60,
