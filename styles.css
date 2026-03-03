@@ -171,23 +171,15 @@ section .title::after {
 }
 
 .navbar .logo a {
-  color: #fff;
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
 }
 
-/* Logo gradient accent */
-.navbar .logo a span {
-  background: linear-gradient(135deg, var(--violet), var(--sand), var(--teal));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.3s ease;
-}
-
-.navbar.sticky .logo a span {
-  -webkit-text-fill-color: #fff;
-  background: none;
+.navbar .logo .brand-logo {
+  display: block;
+  width: 220px;
+  max-width: 42vw;
+  height: auto;
 }
 
 /* Menu */
@@ -1004,6 +996,10 @@ footer span a:hover {
     padding: 0 23px;
   }
 
+  .navbar .logo .brand-logo {
+    width: 180px;
+  }
+
   .home .home-content .text-2 {
     font-size: 44px;
   }
@@ -1022,6 +1018,11 @@ footer span a:hover {
 }
 
 @media (max-width: 500px) {
+  .navbar .logo .brand-logo {
+    width: 155px;
+    max-width: 56vw;
+  }
+
   .home .home-content .text-2 {
     font-size: 38px;
   }
