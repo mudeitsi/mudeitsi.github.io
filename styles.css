@@ -863,8 +863,8 @@ section .title::after {
   background-color: #fc4f08;
 }
 
-.fa-brands,
-.fa-solid {
+.fab,
+.fas {
   color: #fff;
 }
 
