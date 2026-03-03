@@ -46,6 +46,13 @@
       gap: 30px;
     }
 
+    /* Force 3 columns on laptop/desktop to show 3 + 3 layout */
+    @media (min-width: 900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
     .art-card {
       background: #ffffff;
       border-radius: 14px;
