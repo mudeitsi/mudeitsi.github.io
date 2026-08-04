@@ -237,8 +237,7 @@
     }
 
     .fee-box,
-    .payment-box,
-    .privacy-note {
+    .payment-box {
       border-radius: 14px;
       padding: 1rem;
     }
@@ -261,19 +260,6 @@
 
     .payment-box p {
       margin: 0.25rem 0;
-    }
-
-    .privacy-note {
-      margin-top: 1rem;
-      background: rgba(203, 182, 233, 0.25);
-      color: var(--muted);
-      font-size: 0.93rem;
-    }
-
-    .field-help {
-      margin: 0.45rem 0 0;
-      color: var(--muted);
-      font-size: 0.9rem;
     }
 
     .inline-error {
@@ -441,7 +427,7 @@
           </div>
           <div class="summary-item">
             <strong>Age group</strong>
-            Designed mainly for ages 7 to 14; ages 3 to 17 may register
+            Ages 3 to 17
           </div>
           <div class="summary-item">
             <strong>Venue</strong>
@@ -454,6 +440,7 @@
         </div>
       </header>
 
+      
       <form
         id="registration-form"
         action="https://formspree.io/f/xbgrrkwn"
@@ -704,10 +691,6 @@
               autocomplete="off"
               placeholder="Add it now if available"
             >
-            <p class="field-help">
-              You may leave this blank and confirm payment later through
-              WhatsApp. Adding the code helps us verify payment faster.
-            </p>
           </div>
         </fieldset>
 
@@ -761,12 +744,6 @@
             </label>
           </div>
 
-          <div class="privacy-note">
-            The information submitted here is used only for
-            registration, safety, event communication and
-            authorised collection of the child. Do not place
-            submitted registration data in the public repository.
-          </div>
         </fieldset>
 
         <button
@@ -823,10 +800,6 @@
         |
         <a href="https://wa.me/254758335686">
           WhatsApp 0758 335 686
-        </a>
-        |
-        <a href="https://www.mudeizi.dev">
-          www.mudeizi.dev
         </a>
       </footer>
     </section>
@@ -919,8 +892,8 @@
       } catch (error) {
         formMessage.className = "form-message error";
         formMessage.textContent =
-          "The registration was not submitted. Please try again " +
-          "or contact Mudeizi through WhatsApp.";
+          "We could not submit the registration. Please try again, " +
+          "or contact Mudeizi through WhatsApp or email.";
         submitButton.disabled = false;
         submitButton.textContent = "Complete Registration";
       }
