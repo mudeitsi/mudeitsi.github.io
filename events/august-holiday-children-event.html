@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     name="description"
-    content="Register a child aged 7 to 14 for the Mudeizi Kids Creative Experience, 12 to 14 August 2026 in Kiembeni."
+    content="Register a child aged 3 to 17 for the Mudeizi Kids Creative Experience, 12 to 14 August 2026 in Kiembeni."
   >
   <meta name="theme-color" content="#6A2C91">
   <meta
@@ -270,6 +270,12 @@
       font-size: 0.93rem;
     }
 
+    .field-help {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
     .inline-error {
       min-height: 1.4rem;
       margin: 0.55rem 0 0;
@@ -334,9 +340,30 @@
 
     .partners {
       margin: 1.5rem 0 0;
-      color: var(--muted);
+      padding: 0 1rem 1.5rem;
       text-align: center;
+    }
+
+    .partners-title {
+      margin: 0 0 0.8rem;
+      color: var(--muted);
       font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .partner-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .partner-logo {
+      width: auto;
+      max-width: 150px;
+      max-height: 82px;
+      object-fit: contain;
     }
 
     footer {
@@ -389,7 +416,7 @@
     <img
       class="hero-image"
       src="../images/events/kids-creative-experience-header.png"
-      alt="Kids Creative Experience registration, 12 to 14 August 2026, for ages 7 to 14."
+      alt="Kids Creative Experience registration, 12 to 14 August 2026, for ages 3 to 17."
     >
 
     <section class="form-card" aria-labelledby="page-title">
@@ -414,7 +441,7 @@
           </div>
           <div class="summary-item">
             <strong>Age group</strong>
-            Children aged 7 to 14
+            Designed mainly for ages 7 to 14; ages 3 to 17 may register
           </div>
           <div class="summary-item">
             <strong>Venue</strong>
@@ -427,10 +454,6 @@
         </div>
       </header>
 
-      <!--
-        Replace YOUR_FORM_ID with the Formspree form ID from your dashboard.
-        Example: https://formspree.io/f/xbgrrkwn
-      -->
       <form
         id="registration-form"
         action="https://formspree.io/f/xbgrrkwn"
@@ -529,6 +552,10 @@
                 required
               >
                 <option value="">Select age</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
                 <option value="7">7</option>
                 <option value="8">8</option>
                 <option value="9">9</option>
@@ -537,6 +564,9 @@
                 <option value="12">12</option>
                 <option value="13">13</option>
                 <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
               </select>
             </div>
           </div>
@@ -665,16 +695,19 @@
           <div class="field">
             <label for="mpesa-code">
               M-Pesa confirmation code
-              <span class="required">*</span>
+              <span>(optional)</span>
             </label>
             <input
               id="mpesa-code"
               name="mpesa_confirmation_code"
               type="text"
               autocomplete="off"
-              placeholder="e.g. TGH12AB3CD"
-              required
+              placeholder="Add it now if available"
             >
+            <p class="field-help">
+              You may leave this blank and confirm payment later through
+              WhatsApp. Adding the code helps us verify payment faster.
+            </p>
           </div>
         </fieldset>
 
@@ -764,12 +797,30 @@
         </p>
       </section>
 
-      <p class="partners">
-        In collaboration with Ebbstarkessy and Rekindled.
-      </p>
+      <section class="partners" aria-label="Event collaborators">
+        <p class="partners-title">In collaboration with</p>
+        <div class="partner-logos">
+          <img
+            class="partner-logo"
+            src="ebbstarkessy-logo.png"
+            alt="Ebbstarkessy"
+          >
+          <img
+            class="partner-logo"
+            src="rekindled-logo.jpeg"
+            alt="Rekindled"
+          >
+        </div>
+      </section>
 
       <footer>
         Questions:
+        <a href="mailto:info@mudeizi.dev">info@mudeizi.dev</a>
+        |
+        <a href="mailto:mudeizi.dev@gmail.com">
+          mudeizi.dev@gmail.com
+        </a>
+        |
         <a href="https://wa.me/254758335686">
           WhatsApp 0758 335 686
         </a>
@@ -837,14 +888,6 @@
           behavior: "smooth",
           block: "center",
         });
-        return;
-      }
-
-      if (form.action.includes("xbgrrkwn")) {
-        formMessage.className = "form-message error";
-        formMessage.textContent =
-          "The form is not connected yet. Replace xbgrrkwn " +
-          "with the Formspree form ID before publishing.";
         return;
       }
 
