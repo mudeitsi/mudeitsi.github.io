@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Register a child aged 7 to 14 for the Mudeizi Kids Creative Experience, 12 to 14 August 2026 in Kiembeni."
+  >
+  <meta name="theme-color" content="#6A2C91">
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; img-src 'self' https://mudeitsi.github.io data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src https://formspree.io; form-action https://formspree.io; base-uri 'self';"
+  >
+  <title>Kids Creative Experience Registration | Mudeizi</title>
+
+  <style>
+    :root {
+      --mudeizi-purple: #6A2C91;
+      --mudeizi-cream: #F7EED6;
+      --mudeizi-gold: #E3B641;
+      --mudeizi-lavender: #CBB6E9;
+      --mudeizi-teal: #2DBFA9;
+      --mudeizi-navy: #02020B;
+      --white: #FFFFFF;
+      --muted: #5C5862;
+      --border: #D9CFBA;
+      --error: #A52828;
+      --success: #176B54;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(203, 182, 233, 0.35),
+          transparent 30rem
+        ),
+        var(--mudeizi-cream);
+      color: var(--mudeizi-navy);
+      font-family:
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      line-height: 1.55;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page-shell {
+      width: min(100% - 2rem, 960px);
+      margin: 2rem auto;
+    }
+
+    .hero-image {
+      width: 100%;
+      border-radius: 22px 22px 0 0;
+      box-shadow: 0 16px 45px rgba(2, 2, 11, 0.13);
+    }
+
+    .form-card {
+      background: var(--white);
+      border-top: 8px solid var(--mudeizi-purple);
+      border-radius: 0 0 22px 22px;
+      box-shadow: 0 16px 45px rgba(2, 2, 11, 0.13);
+      overflow: hidden;
+    }
+
+    .form-header,
+    form,
+    .success-panel {
+      padding: clamp(1.25rem, 3vw, 2.5rem);
+    }
+
+    .logo {
+      width: min(100%, 300px);
+      margin: 0 auto 1rem;
+    }
+
+    h1,
+    h2,
+    legend {
+      color: var(--mudeizi-purple);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    h1 {
+      margin: 0;
+      text-align: center;
+      font-size: clamp(2rem, 5vw, 3.1rem);
+      line-height: 1.12;
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 0.85rem auto 0;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .event-summary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin: 1.6rem 0 0;
+    }
+
+    .summary-item {
+      padding: 0.95rem;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--mudeizi-teal);
+      border-radius: 12px;
+      background: #FFFCF5;
+    }
+
+    .summary-item strong {
+      display: block;
+      color: var(--mudeizi-purple);
+    }
+
+    form {
+      border-top: 1px solid var(--border);
+    }
+
+    fieldset {
+      min-width: 0;
+      margin: 0 0 1.5rem;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #FFFEFA;
+    }
+
+    legend {
+      padding: 0 0.55rem;
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .field {
+      margin-bottom: 1rem;
+    }
+
+    .field:last-child {
+      margin-bottom: 0;
+    }
+
+    label,
+    .field-label {
+      display: block;
+      margin-bottom: 0.42rem;
+      color: var(--mudeizi-navy);
+      font-weight: 700;
+    }
+
+    .required {
+      color: var(--error);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #BFB6A4;
+      border-radius: 10px;
+      background: var(--white);
+      color: var(--mudeizi-navy);
+      font: inherit;
+      padding: 0.82rem 0.9rem;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 3px solid rgba(45, 191, 169, 0.28);
+      border-color: var(--mudeizi-teal);
+    }
+
+    .choice-list {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .choice {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      margin: 0;
+      padding: 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .choice:hover {
+      border-color: var(--mudeizi-teal);
+      background: rgba(45, 191, 169, 0.07);
+    }
+
+    .choice input {
+      width: 1.15rem;
+      height: 1.15rem;
+      margin: 0.18rem 0 0;
+      accent-color: var(--mudeizi-purple);
+      flex: 0 0 auto;
+    }
+
+    .choice-copy strong {
+      display: block;
+      color: var(--mudeizi-purple);
+    }
+
+    .fee-box,
+    .payment-box,
+    .privacy-note {
+      border-radius: 14px;
+      padding: 1rem;
+    }
+
+    .fee-box {
+      margin-top: 1rem;
+      background: var(--mudeizi-lavender);
+      color: var(--mudeizi-navy);
+    }
+
+    .fee-box strong {
+      color: var(--mudeizi-purple);
+    }
+
+    .payment-box {
+      margin-bottom: 1rem;
+      border-left: 6px solid var(--mudeizi-gold);
+      background: rgba(227, 182, 65, 0.18);
+    }
+
+    .payment-box p {
+      margin: 0.25rem 0;
+    }
+
+    .privacy-note {
+      margin-top: 1rem;
+      background: rgba(203, 182, 233, 0.25);
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .inline-error {
+      min-height: 1.4rem;
+      margin: 0.55rem 0 0;
+      color: var(--error);
+      font-weight: 700;
+    }
+
+    .submit-button {
+      width: 100%;
+      border: 0;
+      border-radius: 12px;
+      background: var(--mudeizi-purple);
+      color: var(--white);
+      cursor: pointer;
+      font: inherit;
+      font-size: 1.08rem;
+      font-weight: 800;
+      padding: 1rem 1.25rem;
+      transition:
+        transform 160ms ease,
+        background-color 160ms ease;
+    }
+
+    .submit-button:hover {
+      background: #552174;
+      transform: translateY(-1px);
+    }
+
+    .submit-button:disabled {
+      cursor: wait;
+      opacity: 0.72;
+      transform: none;
+    }
+
+    .form-message {
+      margin: 1rem 0 0;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .form-message.error {
+      color: var(--error);
+    }
+
+    .form-message.success {
+      color: var(--success);
+    }
+
+    .success-panel {
+      display: none;
+      text-align: center;
+    }
+
+    .success-panel[aria-hidden="false"] {
+      display: block;
+    }
+
+    .success-panel h2 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .partners {
+      margin: 1.5rem 0 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    footer {
+      padding: 1rem;
+      background: var(--mudeizi-navy);
+      color: var(--white);
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--mudeizi-lavender);
+    }
+
+    .honeypot {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 700px) {
+      .page-shell {
+        width: min(100% - 1rem, 960px);
+        margin: 0.5rem auto;
+      }
+
+      .event-summary,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        border-radius: 16px 16px 0 0;
+      }
+
+      .form-card {
+        border-radius: 0 0 16px 16px;
+      }
+
+      fieldset {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page-shell">
+    <img
+      class="hero-image"
+      src="../images/events/kids-creative-experience-header.png"
+      alt="Kids Creative Experience registration, 12 to 14 August 2026, for ages 7 to 14."
+    >
+
+    <section class="form-card" aria-labelledby="page-title">
+      <header class="form-header">
+        <img
+          class="logo"
+          src="/images/branding/Mudeizi%20Official%20Logo%20Landscape.png"
+          alt="Mudeizi Arts and Tech"
+        >
+
+        <h1 id="page-title">Kids Creative Experience Registration</h1>
+
+        <p class="intro">
+          Complete one form for each child. Registration is confirmed
+          after the submitted M-Pesa payment is verified.
+        </p>
+
+        <div class="event-summary" aria-label="Event details">
+          <div class="summary-item">
+            <strong>Date and time</strong>
+            12–14 August 2026, 2:00–5:00 p.m.
+          </div>
+          <div class="summary-item">
+            <strong>Age group</strong>
+            Children aged 7 to 14
+          </div>
+          <div class="summary-item">
+            <strong>Venue</strong>
+            Mudeizi Arts and Tech, Kiembeni
+          </div>
+          <div class="summary-item">
+            <strong>Fees</strong>
+            KSh 1,500 per day or KSh 4,000 for all three days
+          </div>
+        </div>
+      </header>
+
+      <!--
+        Replace YOUR_FORM_ID with the Formspree form ID from your dashboard.
+        Example: https://formspree.io/f/abcdwxyz
+      -->
+      <form
+        id="registration-form"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="event"
+          value="Kids Creative Experience, 12–14 August 2026"
+        >
+        <input
+          type="hidden"
+          name="amount_due"
+          id="amount-due-input"
+          value=""
+        >
+        <input
+          type="hidden"
+          name="submitted_at"
+          id="submitted-at"
+          value=""
+        >
+        <input
+          type="hidden"
+          name="_subject"
+          value="New Kids Creative Experience registration"
+        >
+
+        <div class="honeypot" aria-hidden="true">
+          <label for="website">Leave this field empty</label>
+          <input
+            id="website"
+            name="_gotcha"
+            type="text"
+            tabindex="-1"
+            autocomplete="off"
+          >
+        </div>
+
+        <fieldset>
+          <legend>Parent and child</legend>
+
+          <div class="grid">
+            <div class="field">
+              <label for="parent-name">
+                Parent or guardian full name
+                <span class="required">*</span>
+              </label>
+              <input
+                id="parent-name"
+                name="parent_guardian_name"
+                type="text"
+                autocomplete="name"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="phone">
+                WhatsApp or phone number
+                <span class="required">*</span>
+              </label>
+              <input
+                id="phone"
+                name="parent_phone"
+                type="tel"
+                inputmode="tel"
+                autocomplete="tel"
+                placeholder="e.g. 0758 335 686"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="child-name">
+                Child's full name
+                <span class="required">*</span>
+              </label>
+              <input
+                id="child-name"
+                name="child_name"
+                type="text"
+                autocomplete="off"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="child-age">
+                Child's age
+                <span class="required">*</span>
+              </label>
+              <select
+                id="child-age"
+                name="child_age"
+                required
+              >
+                <option value="">Select age</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Attendance</legend>
+
+          <p class="field-label">
+            Select every day the child will attend
+            <span class="required">*</span>
+          </p>
+
+          <div class="choice-list" id="attendance-options">
+            <label class="choice">
+              <input
+                type="checkbox"
+                name="attendance"
+                value="Day 1: Wednesday 12 August, Canvas Painting"
+              >
+              <span class="choice-copy">
+                <strong>Day 1: Wednesday, 12 August</strong>
+                Canvas Painting
+              </span>
+            </label>
+
+            <label class="choice">
+              <input
+                type="checkbox"
+                name="attendance"
+                value="Day 2: Thursday 13 August, Art Light Circuit"
+              >
+              <span class="choice-copy">
+                <strong>Day 2: Thursday, 13 August</strong>
+                Art Light Circuit
+              </span>
+            </label>
+
+            <label class="choice">
+              <input
+                type="checkbox"
+                name="attendance"
+                value="Day 3: Friday 14 August, Drawing Robot"
+              >
+              <span class="choice-copy">
+                <strong>Day 3: Friday, 14 August</strong>
+                Drawing Robot
+              </span>
+            </label>
+          </div>
+
+          <p
+            class="inline-error"
+            id="attendance-error"
+            role="alert"
+          ></p>
+
+          <div class="fee-box" aria-live="polite">
+            <strong>Amount due:</strong>
+            <span id="amount-due">Select attendance days</span>
+            <br>
+            One day is KSh 1,500, two days are KSh 3,000,
+            and all three days are KSh 4,000.
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Safety and collection</legend>
+
+          <div class="field">
+            <label for="health-notes">
+              Allergies, medical information or support needs
+              <span class="required">*</span>
+            </label>
+            <textarea
+              id="health-notes"
+              name="allergies_medical_support"
+              placeholder="Write None if there is nothing to report."
+              required
+            ></textarea>
+          </div>
+
+          <div class="grid">
+            <div class="field">
+              <label for="emergency-contact">
+                Emergency contact name and phone
+                <span class="required">*</span>
+              </label>
+              <input
+                id="emergency-contact"
+                name="emergency_contact"
+                type="text"
+                placeholder="Full name and phone number"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="collection-person">
+                Person authorised to collect the child
+                <span class="required">*</span>
+              </label>
+              <input
+                id="collection-person"
+                name="authorised_collection_person"
+                type="text"
+                placeholder="Full name and phone number"
+                required
+              >
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Payment</legend>
+
+          <div class="payment-box">
+            <p><strong>Paybill:</strong> 522533</p>
+            <p><strong>Account number:</strong> 8117146</p>
+            <p>
+              The child's place is confirmed after the payment
+              and registration details have been verified.
+            </p>
+          </div>
+
+          <div class="field">
+            <label for="mpesa-code">
+              M-Pesa confirmation code
+              <span class="required">*</span>
+            </label>
+            <input
+              id="mpesa-code"
+              name="mpesa_confirmation_code"
+              type="text"
+              autocomplete="off"
+              placeholder="e.g. TGH12AB3CD"
+              required
+            >
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Consent</legend>
+
+          <p class="field-label">
+            May Mudeizi use event photographs or short videos
+            of the child for event documentation and promotion?
+            <span class="required">*</span>
+          </p>
+
+          <div class="choice-list">
+            <label class="choice">
+              <input
+                type="radio"
+                name="media_consent"
+                value="Yes"
+                required
+              >
+              <span>Yes, I consent.</span>
+            </label>
+
+            <label class="choice">
+              <input
+                type="radio"
+                name="media_consent"
+                value="No"
+                required
+              >
+              <span>
+                No. Please do not include my child in event
+                photographs or videos.
+              </span>
+            </label>
+          </div>
+
+          <div class="field" style="margin-top: 1rem;">
+            <label class="choice">
+              <input
+                type="checkbox"
+                name="parent_declaration"
+                value="Confirmed"
+                required
+              >
+              <span>
+                I confirm that the information provided is correct
+                and that I am authorised to register this child.
+                <span class="required">*</span>
+              </span>
+            </label>
+          </div>
+
+          <div class="privacy-note">
+            The information submitted here is used only for
+            registration, safety, event communication and
+            authorised collection of the child. Do not place
+            submitted registration data in the public repository.
+          </div>
+        </fieldset>
+
+        <button
+          class="submit-button"
+          id="submit-button"
+          type="submit"
+        >
+          Complete Registration
+        </button>
+
+        <p
+          class="form-message"
+          id="form-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </form>
+
+      <section
+        class="success-panel"
+        id="success-panel"
+        aria-hidden="true"
+      >
+        <h2>Registration received</h2>
+        <p>
+          Thank you. Mudeizi will verify the submitted payment
+          and confirm the child's place through WhatsApp.
+        </p>
+      </section>
+
+      <p class="partners">
+        In collaboration with Ebbstarkessy and Rekindled.
+      </p>
+
+      <footer>
+        Questions:
+        <a href="https://wa.me/254758335686">
+          WhatsApp 0758 335 686
+        </a>
+        |
+        <a href="https://www.mudeizi.dev">
+          www.mudeizi.dev
+        </a>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    const form = document.querySelector("#registration-form");
+    const submitButton = document.querySelector("#submit-button");
+    const formMessage = document.querySelector("#form-message");
+    const successPanel = document.querySelector("#success-panel");
+    const attendanceError = document.querySelector("#attendance-error");
+    const attendanceInputs = Array.from(
+      document.querySelectorAll('input[name="attendance"]')
+    );
+    const amountDueText = document.querySelector("#amount-due");
+    const amountDueInput = document.querySelector("#amount-due-input");
+    const submittedAtInput = document.querySelector("#submitted-at");
+
+    function getSelectedAttendanceCount() {
+      return attendanceInputs.filter((input) => input.checked).length;
+    }
+
+    function calculateAmount(count) {
+      if (count === 3) {
+        return 4000;
+      }
+
+      return count * 1500;
+    }
+
+    function updateAmount() {
+      const count = getSelectedAttendanceCount();
+
+      if (count === 0) {
+        amountDueText.textContent = "Select attendance days";
+        amountDueInput.value = "";
+        return;
+      }
+
+      const amount = calculateAmount(count);
+      amountDueText.textContent = `KSh ${amount.toLocaleString("en-KE")}`;
+      amountDueInput.value = `KSh ${amount.toLocaleString("en-KE")}`;
+      attendanceError.textContent = "";
+    }
+
+    attendanceInputs.forEach((input) => {
+      input.addEventListener("change", updateAmount);
+    });
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const selectedCount = getSelectedAttendanceCount();
+
+      if (selectedCount === 0) {
+        attendanceError.textContent =
+          "Select at least one attendance day.";
+        document.querySelector("#attendance-options").scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+        return;
+      }
+
+      if (form.action.includes("YOUR_FORM_ID")) {
+        formMessage.className = "form-message error";
+        formMessage.textContent =
+          "The form is not connected yet. Replace YOUR_FORM_ID " +
+          "with the Formspree form ID before publishing.";
+        return;
+      }
+
+      submittedAtInput.value = new Date().toISOString();
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting...";
+      formMessage.className = "form-message";
+      formMessage.textContent = "";
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("The registration could not be submitted.");
+        }
+
+        form.hidden = true;
+        successPanel.setAttribute("aria-hidden", "false");
+        successPanel.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      } catch (error) {
+        formMessage.className = "form-message error";
+        formMessage.textContent =
+          "The registration was not submitted. Please try again " +
+          "or contact Mudeizi through WhatsApp.";
+        submitButton.disabled = false;
+        submitButton.textContent = "Complete Registration";
+      }
+    });
+
+    updateAmount();
+  </script>
+</body>
+</html>
