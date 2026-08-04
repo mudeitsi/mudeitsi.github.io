@@ -62,10 +62,12 @@
         Arial,
         sans-serif;
       line-height: 1.55;
+      overflow-x: hidden;
     }
 
     img {
       display: block;
+      height: auto;
       max-width: 100%;
     }
 
@@ -76,11 +78,15 @@
 
     .hero-image {
       width: 100%;
+      max-height: 390px;
       border-radius: 22px 22px 0 0;
+      object-fit: cover;
+      object-position: center;
       box-shadow: 0 16px 45px rgba(2, 2, 11, 0.13);
     }
 
     .form-card {
+      min-width: 0;
       overflow: hidden;
       background: var(--white);
       border-top: 8px solid var(--mudeizi-purple);
@@ -107,10 +113,13 @@
     }
 
     h1 {
-      margin: 0;
+      max-width: 18ch;
+      margin: 0 auto;
       text-align: center;
-      font-size: clamp(2rem, 5vw, 3.1rem);
+      font-size: 3.1rem;
       line-height: 1.12;
+      overflow-wrap: anywhere;
+      text-wrap: balance;
     }
 
     .intro {
@@ -118,6 +127,7 @@
       margin: 0.85rem auto 0;
       color: var(--muted);
       text-align: center;
+      overflow-wrap: anywhere;
     }
 
     .event-summary {
@@ -128,6 +138,7 @@
     }
 
     .summary-item {
+      min-width: 0;
       padding: 0.95rem;
       border: 1px solid var(--border);
       border-left: 5px solid var(--mudeizi-teal);
@@ -162,10 +173,12 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
       gap: 1rem;
     }
 
     .field {
+      min-width: 0;
       margin-bottom: 1rem;
     }
 
@@ -188,6 +201,7 @@
     input,
     select,
     textarea {
+      min-width: 0;
       width: 100%;
       padding: 0.82rem 0.9rem;
       border: 1px solid #BFB6A4;
@@ -218,6 +232,7 @@
       display: flex;
       align-items: flex-start;
       gap: 0.7rem;
+      min-width: 0;
       margin: 0;
       padding: 0.85rem;
       border: 1px solid var(--border);
@@ -242,6 +257,11 @@
     .choice-copy strong {
       display: block;
       color: var(--mudeizi-purple);
+    }
+
+    .choice-copy,
+    .choice span {
+      min-width: 0;
     }
 
     .fee-box,
@@ -363,14 +383,29 @@
     }
 
     footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.45rem 0.75rem;
       padding: 1rem;
       background: var(--mudeizi-navy);
       color: var(--white);
       text-align: center;
+      line-height: 1.4;
     }
 
     footer a {
       color: var(--mudeizi-lavender);
+      overflow-wrap: anywhere;
+    }
+
+    .footer-label {
+      font-weight: 700;
+    }
+
+    .footer-separator {
+      color: rgba(255, 255, 255, 0.5);
     }
 
     .honeypot {
@@ -381,10 +416,15 @@
       overflow: hidden;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 760px) {
       .page-shell {
         width: min(100% - 1rem, 960px);
         margin: 0.5rem auto;
+      }
+
+      h1 {
+        max-width: 16ch;
+        font-size: 2.35rem;
       }
 
       .event-summary,
@@ -402,6 +442,114 @@
 
       fieldset {
         padding: 1rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .page-shell {
+        width: 100%;
+        margin: 0;
+      }
+
+      .hero-image,
+      .form-card {
+        border-radius: 0;
+      }
+
+      .form-card {
+        border-top-width: 6px;
+      }
+
+      .form-header,
+      form,
+      .success-panel {
+        padding: 1rem;
+      }
+
+      .logo {
+        width: min(100%, 240px);
+      }
+
+      h1 {
+        max-width: 15ch;
+        font-size: 1.45rem;
+      }
+
+      .intro {
+        max-width: 34ch;
+        font-size: 0.96rem;
+      }
+
+      .event-summary {
+        gap: 0.7rem;
+      }
+
+      .summary-item,
+      .choice,
+      .fee-box,
+      .payment-box {
+        border-radius: 10px;
+      }
+
+      fieldset {
+        margin-bottom: 1.1rem;
+        padding: 0.85rem;
+        border-radius: 12px;
+      }
+
+      legend {
+        padding: 0 0.35rem;
+        font-size: 1.15rem;
+      }
+
+      input,
+      select,
+      textarea {
+        padding: 0.75rem 0.78rem;
+      }
+
+      .choice {
+        gap: 0.6rem;
+        padding: 0.75rem;
+      }
+
+      .partners {
+        padding-inline: 0.75rem;
+      }
+
+      .partner-logos {
+        gap: 1rem;
+      }
+
+      .partner-logo {
+        max-width: 125px;
+        max-height: 68px;
+      }
+
+      footer {
+        padding: 1rem 0.75rem;
+      }
+
+      .footer-separator {
+        display: none;
+      }
+    }
+
+    @media (max-width: 380px) {
+      h1 {
+        font-size: 1.35rem;
+      }
+
+      .summary-item,
+      fieldset,
+      .choice,
+      .fee-box,
+      .payment-box {
+        padding: 0.75rem;
+      }
+
+      .submit-button {
+        padding-inline: 0.85rem;
       }
     }
   </style>
@@ -538,7 +686,7 @@
                 type="tel"
                 inputmode="tel"
                 autocomplete="tel"
-                placeholder="e.g. 0758 335 686"
+                placeholder="e.g. +254758335686"
                 required
               >
             </div>
@@ -881,27 +1029,36 @@
       </section>
 
       <footer>
-        Questions:
+        <span class="footer-label">Questions:</span>
 
         <a href="mailto:info@mudeizi.dev">
           info@mudeizi.dev
         </a>
 
-        |
+        <span
+          class="footer-separator"
+          aria-hidden="true"
+        >|</span>
 
         <a href="mailto:mudeizi.dev@gmail.com">
           mudeizi.dev@gmail.com
         </a>
 
-        |
+        <span
+          class="footer-separator"
+          aria-hidden="true"
+        >|</span>
 
         <a href="https://wa.me/254758335686"
           target="_blank"
           rel="noopener noreferrer">
-          WhatsApp 0758 335 686
+          WhatsApp +254758335686
         </a>
 
-        |
+        <span
+          class="footer-separator"
+          aria-hidden="true"
+        >|</span>
 
         <a href="https://www.mudeizi.dev">
           www.mudeizi.dev
