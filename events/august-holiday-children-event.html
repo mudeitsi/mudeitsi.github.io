@@ -474,8 +474,8 @@
 
         <input
           type="hidden"
-          name="amount_due"
-          id="amount-due-input"
+          name="selected fee"
+          id="selected-fee-input"
           value=""
         >
 
@@ -590,6 +590,21 @@
           </div>
         </fieldset>
 
+          <div class="field">
+            <label for="email">
+              Parent or guardian email
+              <span class="required">*</span>
+            </label>
+
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+            >
+          </div>
+
         <fieldset>
           <legend>Attendance</legend>
 
@@ -652,9 +667,9 @@
             class="fee-box"
             aria-live="polite"
           >
-            <strong>Amount due:</strong>
+            <strong>Selected fee:</strong>
 
-            <span id="amount-due">
+            <span id="selected-fee">
               Select attendance days
             </span>
 
@@ -904,8 +919,8 @@
       document.querySelectorAll('input[name="attendance"]')
     );
 
-    const amountDueText = document.querySelector("#amount-due");
-    const amountDueInput = document.querySelector("#amount-due-input");
+    const selectedFeeText = document.querySelector("#selected-fee");
+    const selectedFeeInput = document.querySelector("#selected-fee-input");
     const submittedAtInput = document.querySelector("#submitted-at");
 
     function getSelectedAttendanceCount() {
@@ -926,8 +941,8 @@
       const count = getSelectedAttendanceCount();
 
       if (count === 0) {
-        amountDueText.textContent = "Select attendance days";
-        amountDueInput.value = "";
+        selectedFeeText.textContent = "Select attendance days";
+        selectedFeeInput.value = "";
         return;
       }
 
