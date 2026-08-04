@@ -2,16 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
   <meta
     name="description"
-    content="Register a child aged 3 to 17 for the Mudeizi Kids Creative Experience, 12 to 14 August 2026 in Kiembeni."
+    content="Register a child aged 7 to 14 for the Mudeizi Kids Creative Experience, 12 to 14 August 2026 in Kiembeni."
   >
+
   <meta name="theme-color" content="#6A2C91">
+
   <meta
     http-equiv="Content-Security-Policy"
-    content="default-src 'self'; img-src 'self' https://mudeitsi.github.io data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src https://formspree.io; form-action https://formspree.io; base-uri 'self';"
+    content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src https://formspree.io; form-action https://formspree.io; base-uri 'self';"
   >
+
   <title>Kids Creative Experience Registration | Mudeizi</title>
 
   <style>
@@ -73,11 +81,11 @@
     }
 
     .form-card {
+      overflow: hidden;
       background: var(--white);
       border-top: 8px solid var(--mudeizi-purple);
       border-radius: 0 0 22px 22px;
       box-shadow: 0 16px 45px rgba(2, 2, 11, 0.13);
-      overflow: hidden;
     }
 
     .form-header,
@@ -181,12 +189,12 @@
     select,
     textarea {
       width: 100%;
+      padding: 0.82rem 0.9rem;
       border: 1px solid #BFB6A4;
       border-radius: 10px;
       background: var(--white);
       color: var(--mudeizi-navy);
       font: inherit;
-      padding: 0.82rem 0.9rem;
     }
 
     textarea {
@@ -197,8 +205,8 @@
     input:focus,
     select:focus,
     textarea:focus {
-      outline: 3px solid rgba(45, 191, 169, 0.28);
       border-color: var(--mudeizi-teal);
+      outline: 3px solid rgba(45, 191, 169, 0.28);
     }
 
     .choice-list {
@@ -238,8 +246,8 @@
 
     .fee-box,
     .payment-box {
-      border-radius: 14px;
       padding: 1rem;
+      border-radius: 14px;
     }
 
     .fee-box {
@@ -262,6 +270,12 @@
       margin: 0.25rem 0;
     }
 
+    .field-help {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
     .inline-error {
       min-height: 1.4rem;
       margin: 0.55rem 0 0;
@@ -271,6 +285,7 @@
 
     .submit-button {
       width: 100%;
+      padding: 1rem 1.25rem;
       border: 0;
       border-radius: 12px;
       background: var(--mudeizi-purple);
@@ -279,7 +294,6 @@
       font: inherit;
       font-size: 1.08rem;
       font-weight: 800;
-      padding: 1rem 1.25rem;
       transition:
         transform 160ms ease,
         background-color 160ms ease;
@@ -304,10 +318,6 @@
 
     .form-message.error {
       color: var(--error);
-    }
-
-    .form-message.success {
-      color: var(--success);
     }
 
     .success-panel {
@@ -402,37 +412,48 @@
     <img
       class="hero-image"
       src="../images/events/kids-creative-experience-header.png"
-      alt="Kids Creative Experience registration, 12 to 14 August 2026, for ages 3 to 17."
+      alt="Kids Creative Experience registration, 12 to 14 August 2026, for ages 7 to 14."
     >
 
-    <section class="form-card" aria-labelledby="page-title">
+    <section
+      class="form-card"
+      aria-labelledby="page-title"
+    >
       <header class="form-header">
         <img
           class="logo"
-          src="/images/branding/Mudeizi%20Official%20Logo%20Landscape.png"
+          src="../images/events/Mudeizi%20Official%20Logo%20Landscape.png"
           alt="Mudeizi Arts and Tech"
         >
 
-        <h1 id="page-title">Kids Creative Experience Registration</h1>
+        <h1 id="page-title">
+          Kids Creative Experience Registration
+        </h1>
 
         <p class="intro">
           Complete one form for each child. Registration is confirmed
           after the submitted M-Pesa payment is verified.
         </p>
 
-        <div class="event-summary" aria-label="Event details">
+        <div
+          class="event-summary"
+          aria-label="Event details"
+        >
           <div class="summary-item">
             <strong>Date and time</strong>
             12–14 August 2026, 2:00–5:00 p.m.
           </div>
+
           <div class="summary-item">
             <strong>Age group</strong>
-            Ages 3 to 17
+            Children aged 7 to 14
           </div>
+
           <div class="summary-item">
             <strong>Venue</strong>
             Mudeizi Arts and Tech, Kiembeni
           </div>
+
           <div class="summary-item">
             <strong>Fees</strong>
             KSh 1,500 per day or KSh 4,000 for all three days
@@ -440,7 +461,6 @@
         </div>
       </header>
 
-      
       <form
         id="registration-form"
         action="https://formspree.io/f/xbgrrkwn"
@@ -451,26 +471,33 @@
           name="event"
           value="Kids Creative Experience, 12–14 August 2026"
         >
+
         <input
           type="hidden"
           name="amount_due"
           id="amount-due-input"
           value=""
         >
+
         <input
           type="hidden"
           name="submitted_at"
           id="submitted-at"
           value=""
         >
+
         <input
           type="hidden"
           name="_subject"
           value="New Kids Creative Experience registration"
         >
 
-        <div class="honeypot" aria-hidden="true">
+        <div
+          class="honeypot"
+          aria-hidden="true"
+        >
           <label for="website">Leave this field empty</label>
+
           <input
             id="website"
             name="_gotcha"
@@ -489,6 +516,7 @@
                 Parent or guardian full name
                 <span class="required">*</span>
               </label>
+
               <input
                 id="parent-name"
                 name="parent_guardian_name"
@@ -503,6 +531,7 @@
                 WhatsApp or phone number
                 <span class="required">*</span>
               </label>
+
               <input
                 id="phone"
                 name="parent_phone"
@@ -519,6 +548,7 @@
                 Child's full name
                 <span class="required">*</span>
               </label>
+
               <input
                 id="child-name"
                 name="child_name"
@@ -533,6 +563,7 @@
                 Child's age
                 <span class="required">*</span>
               </label>
+
               <select
                 id="child-age"
                 name="child_age"
@@ -567,13 +598,17 @@
             <span class="required">*</span>
           </p>
 
-          <div class="choice-list" id="attendance-options">
+          <div
+            class="choice-list"
+            id="attendance-options"
+          >
             <label class="choice">
               <input
                 type="checkbox"
                 name="attendance"
                 value="Day 1: Wednesday 12 August, Canvas Painting"
               >
+
               <span class="choice-copy">
                 <strong>Day 1: Wednesday, 12 August</strong>
                 Canvas Painting
@@ -586,6 +621,7 @@
                 name="attendance"
                 value="Day 2: Thursday 13 August, Art Light Circuit"
               >
+
               <span class="choice-copy">
                 <strong>Day 2: Thursday, 13 August</strong>
                 Art Light Circuit
@@ -598,6 +634,7 @@
                 name="attendance"
                 value="Day 3: Friday 14 August, Drawing Robot"
               >
+
               <span class="choice-copy">
                 <strong>Day 3: Friday, 14 August</strong>
                 Drawing Robot
@@ -611,10 +648,18 @@
             role="alert"
           ></p>
 
-          <div class="fee-box" aria-live="polite">
+          <div
+            class="fee-box"
+            aria-live="polite"
+          >
             <strong>Amount due:</strong>
-            <span id="amount-due">Select attendance days</span>
+
+            <span id="amount-due">
+              Select attendance days
+            </span>
+
             <br>
+
             One day is KSh 1,500, two days are KSh 3,000,
             and all three days are KSh 4,000.
           </div>
@@ -628,6 +673,7 @@
               Allergies, medical information or support needs
               <span class="required">*</span>
             </label>
+
             <textarea
               id="health-notes"
               name="allergies_medical_support"
@@ -642,6 +688,7 @@
                 Emergency contact name and phone
                 <span class="required">*</span>
               </label>
+
               <input
                 id="emergency-contact"
                 name="emergency_contact"
@@ -656,6 +703,7 @@
                 Person authorised to collect the child
                 <span class="required">*</span>
               </label>
+
               <input
                 id="collection-person"
                 name="authorised_collection_person"
@@ -671,8 +719,16 @@
           <legend>Payment</legend>
 
           <div class="payment-box">
-            <p><strong>Paybill:</strong> 522533</p>
-            <p><strong>Account number:</strong> 8117146</p>
+            <p>
+              <strong>Paybill:</strong>
+              522533
+            </p>
+
+            <p>
+              <strong>Account number:</strong>
+              8117146
+            </p>
+
             <p>
               The child's place is confirmed after the payment
               and registration details have been verified.
@@ -684,6 +740,7 @@
               M-Pesa confirmation code
               <span>(optional)</span>
             </label>
+
             <input
               id="mpesa-code"
               name="mpesa_confirmation_code"
@@ -691,6 +748,11 @@
               autocomplete="off"
               placeholder="Add it now if available"
             >
+
+            <p class="field-help">
+              You may leave this blank and confirm payment later
+              through WhatsApp.
+            </p>
           </div>
         </fieldset>
 
@@ -711,6 +773,7 @@
                 value="Yes"
                 required
               >
+
               <span>Yes, I consent.</span>
             </label>
 
@@ -721,6 +784,7 @@
                 value="No"
                 required
               >
+
               <span>
                 No. Please do not include my child in event
                 photographs or videos.
@@ -728,7 +792,10 @@
             </label>
           </div>
 
-          <div class="field" style="margin-top: 1rem;">
+          <div
+            class="field"
+            style="margin-top: 1rem;"
+          >
             <label class="choice">
               <input
                 type="checkbox"
@@ -736,6 +803,7 @@
                 value="Confirmed"
                 required
               >
+
               <span>
                 I confirm that the information provided is correct
                 and that I am authorised to register this child.
@@ -743,7 +811,6 @@
               </span>
             </label>
           </div>
-
         </fieldset>
 
         <button
@@ -768,23 +835,31 @@
         aria-hidden="true"
       >
         <h2>Registration received</h2>
+
         <p>
           Thank you. Mudeizi will verify the submitted payment
           and confirm the child's place through WhatsApp.
         </p>
       </section>
 
-      <section class="partners" aria-label="Event collaborators">
-        <p class="partners-title">In collaboration with</p>
+      <section
+        class="partners"
+        aria-label="Event collaborators"
+      >
+        <p class="partners-title">
+          In collaboration with
+        </p>
+
         <div class="partner-logos">
           <img
             class="partner-logo"
-            src="ebbstarkessy-logo.png"
+            src="../images/events/ebbstarkessy-logo.png"
             alt="Ebbstarkessy"
           >
+
           <img
             class="partner-logo"
-            src="rekindled-logo.jpeg"
+            src="../images/events/rekindled-logo.jpeg"
             alt="Rekindled"
           >
         </div>
@@ -792,14 +867,27 @@
 
       <footer>
         Questions:
-        <a href="mailto:info@mudeizi.dev">info@mudeizi.dev</a>
+
+        <a href="mailto:info@mudeizi.dev">
+          info@mudeizi.dev
+        </a>
+
         |
+
         <a href="mailto:mudeizi.dev@gmail.com">
           mudeizi.dev@gmail.com
         </a>
+
         |
+
         <a href="https://wa.me/254758335686">
           WhatsApp 0758 335 686
+        </a>
+
+        |
+
+        <a href="https://www.mudeizi.dev">
+          www.mudeizi.dev
         </a>
       </footer>
     </section>
@@ -811,15 +899,19 @@
     const formMessage = document.querySelector("#form-message");
     const successPanel = document.querySelector("#success-panel");
     const attendanceError = document.querySelector("#attendance-error");
+
     const attendanceInputs = Array.from(
       document.querySelectorAll('input[name="attendance"]')
     );
+
     const amountDueText = document.querySelector("#amount-due");
     const amountDueInput = document.querySelector("#amount-due-input");
     const submittedAtInput = document.querySelector("#submitted-at");
 
     function getSelectedAttendanceCount() {
-      return attendanceInputs.filter((input) => input.checked).length;
+      return attendanceInputs.filter(
+        (input) => input.checked
+      ).length;
     }
 
     function calculateAmount(count) {
@@ -840,8 +932,13 @@
       }
 
       const amount = calculateAmount(count);
-      amountDueText.textContent = `KSh ${amount.toLocaleString("en-KE")}`;
-      amountDueInput.value = `KSh ${amount.toLocaleString("en-KE")}`;
+
+      amountDueText.textContent =
+        `KSh ${amount.toLocaleString("en-KE")}`;
+
+      amountDueInput.value =
+        `KSh ${amount.toLocaleString("en-KE")}`;
+
       attendanceError.textContent = "";
     }
 
@@ -857,16 +954,22 @@
       if (selectedCount === 0) {
         attendanceError.textContent =
           "Select at least one attendance day.";
-        document.querySelector("#attendance-options").scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-        });
+
+        document
+          .querySelector("#attendance-options")
+          .scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+
         return;
       }
 
       submittedAtInput.value = new Date().toISOString();
+
       submitButton.disabled = true;
       submitButton.textContent = "Submitting...";
+
       formMessage.className = "form-message";
       formMessage.textContent = "";
 
@@ -875,25 +978,34 @@
           method: "POST",
           body: new FormData(form),
           headers: {
-            Accept: "application/json",
-          },
+            Accept: "application/json"
+          }
         });
 
         if (!response.ok) {
-          throw new Error("The registration could not be submitted.");
+          throw new Error(
+            "The registration could not be submitted."
+          );
         }
 
         form.hidden = true;
-        successPanel.setAttribute("aria-hidden", "false");
+
+        successPanel.setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
         successPanel.scrollIntoView({
           behavior: "smooth",
-          block: "center",
+          block: "center"
         });
       } catch (error) {
         formMessage.className = "form-message error";
+
         formMessage.textContent =
           "We could not submit the registration. Please try again, " +
           "or contact Mudeizi through WhatsApp or email.";
+
         submitButton.disabled = false;
         submitButton.textContent = "Complete Registration";
       }
