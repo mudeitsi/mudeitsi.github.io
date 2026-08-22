@@ -3,11 +3,10 @@
 <head>
   <!--
     Document: Art Gallery page
-    Purpose: Displays a grid of original artworks as cards (image, title, meta, description, tags).
+    Purpose: Displays a grid of paintings, portraits, murals, and other artworks as cards.
     Notes:
       - This file relies on your shared design system variables in styles.css (for example, --charcoal, --teal).
-      - Only the debut project descriptions and the title rename from "Led by the Heart" to "Lead from the Heart"
-        have been updated as requested. All colors, layout, and non-debut content are kept the same.
+      - The gallery is designed to grow as more catalogue items become available.
   -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +28,7 @@
     }
 
     .art-gallery .title::after {
-      content: "Original Works";
+      content: "Selected Works";
     }
 
     .gallery-intro {
@@ -66,17 +65,45 @@
     .art-image {
       position: relative;
       overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: #e9eef0;
     }
 
-    .art-image img {
+    .art-slides {
+      height: 100%;
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      scroll-behavior: smooth;
+    }
+
+    .art-slides img {
+      min-width: 100%;
       width: 100%;
+      height: 100%;
       display: block;
       object-fit: cover;
+      scroll-snap-align: start;
+    }
+
+    .art-card:hover .art-slides img {
+      transform: scale(1.04);
+    }
+
+    .art-slides img:only-child {
       transition: transform 0.7s ease;
     }
 
-    .art-card:hover .art-image img {
-      transform: scale(1.04);
+    .art-carousel-note {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(20, 24, 28, 0.78);
+      color: #fff;
+      font-size: 0.72rem;
     }
 
     .art-body {
@@ -163,37 +190,23 @@
     </div>
   </nav>
 
-  <!--
-    ART GALLERY SECTION
-    <!-- Header (copied from index.html for exact parity) -->
-    <nav class="navbar">
-      <div class="max-width">
-        <div class="logo">
-          <a href="index.html" aria-label="Mudeizi home">
-            <img class="brand-logo" src="images/branding/Mudeizi Official Logo Landscape.png" alt="Mudeizi logo" />
-          </a>
-        </div>
-        <ul class="menu">
-          <li><a href="index.html#home" class="menu-btn"><strong>Home</strong></a></li>
-          <li><a href="index.html#about" class="menu-btn"><strong>About</strong></a></li>
-          <li><a href="index.html#services" class="menu-btn"><strong>What I Do</strong></a></li>
-          <li><a href="index.html#skills" class="menu-btn"><strong>Skills</strong></a></li>
-          <li><a href="index.html#projects" class="menu-btn"><strong>Projects</strong></a></li>
-          <li><a href="index.html#contact" class="menu-btn"><strong>Contact</strong></a></li>
-          <li><a href="art.html"><strong>Art</strong></a></li>
-        </ul>
-        <div class="menu-btn" aria-label="Toggle menu" role="button" tabindex="0">
-          <i class="fas fa-bars"></i>
-        </div>
-      </div>
-    </nav>
+  <!-- ART GALLERY SECTION -->
+  <section class="art-gallery" id="art">
+    <div class="max-width">
+      <h2 class="title">Art</h2>
+      <p class="gallery-intro">
+        A selection of paintings, portraits, murals, and other works.
+      </p>
       <div class="gallery-grid">
 
-        <!-- Pull Within (unchanged image) -->
+        <!-- Pull Within -->
         <article class="art-card">
           <div class="art-image">
-            <img src="images/art/the-pull-within.jpg"
-                 alt="The Pull Within – surreal portrait of an African woman in transformation">
+            <div class="art-slides">
+              <img src="images/art/the-pull-within.jpg" alt="Pull Within, view 1">
+              <img src="images/art/the-pull-within1.jpg" alt="Pull Within, view 2">
+            </div>
+            <span class="art-carousel-note">2 views</span>
           </div>
           <div class="art-body">
             <h3 class="art-title">Pull Within</h3>
@@ -212,35 +225,14 @@
           </div>
         </article>
 
-        <!-- Price of Vision (COMING SOON) -->
+        <!-- Lead from the Heart -->
         <article class="art-card">
           <div class="art-image">
-            <img src="images/art/logo-mudeizi.png"
-                 alt="Artwork coming soon">
-          </div>
-          <div class="art-body">
-            <h3 class="art-title">Price of Vision</h3>
-            <p class="art-meta">
-              2025 &nbsp;•&nbsp; Acrylic on canvas &nbsp;•&nbsp;<br />
-              <span>100 × 50 cm (3.28 × 1.64 ft)</span>
-            </p>
-            <p class="art-description">
-              <em>Coming soon.</em><br />
-              A striking portrait of a Kenyan man whose eyes are covered by a thousand shilling note. The work examines how economic systems influence perception, obedience, and fear, questioning what is lost when money becomes the primary lens through which reality is viewed.
-            </p>
-            <div class="art-tags">
-              <span class="art-tag art-tag--highlight">Contemporary Art</span>
-              <span class="art-tag">Perception</span>
-              <span class="art-tag">Cultural Dialogue</span>
+            <div class="art-slides">
+              <img src="images/art/lead-from-the-heart.jpg" alt="Lead from the Heart, view 1">
+              <img src="images/art/lead-from-the-heart1.jpg" alt="Lead from the Heart, view 2">
             </div>
-          </div>
-        </article>
-
-        <!-- Lead from the Heart (COMING SOON) -->
-        <article class="art-card">
-          <div class="art-image">
-            <img src="images/art/lead-from-the-heart.jpg"
-                 alt="Lead from the Heart – portrait of a young African man kneeling at the shoreline">
+            <span class="art-carousel-note">2 views</span>
           </div>
           <div class="art-body">
             <h3 class="art-title">Lead from the Heart</h3>
@@ -249,7 +241,6 @@
               <span>4 ft × 4 ft (121.9 × 121.9 cm)</span>
             </p>
             <p class="art-description">
-              <em>Coming soon.</em><br />
               A young African man kneels at the shoreline, cleansing a human brain with water flowing from a glowing heart. The work centers intuition, emotional intelligence, and inner leadership, presenting the heart as a guide that softens thought and restores balance between intellect and embodied knowing.
             </p>
             <div class="art-tags">
@@ -260,11 +251,15 @@
           </div>
         </article>
 
-        <!-- RNB Mural (unchanged image) -->
+        <!-- RNB Mural -->
         <article class="art-card">
           <div class="art-image">
-            <img src="images\art\RNB Mural Full Logo.jpg"
-                 alt="This was a mural project for a naturopathy shop, Rejuvenating Nature's Beam">
+            <div class="art-slides">
+              <img src="images/art/RNB Mural.jpg" alt="Rejuvenating Nature's Beam mural, view 1">
+              <img src="images/art/RNB Mural1.jpg" alt="Rejuvenating Nature's Beam mural, view 2">
+              <img src="images/art/RNB Mural2.jpg" alt="Rejuvenating Nature's Beam mural, view 3">
+            </div>
+            <span class="art-carousel-note">3 views</span>
           </div>
           <div class="art-body">
             <h3 class="art-title">Rejuvenating Nature's Beam (RNB) Mural</h3>
@@ -282,53 +277,71 @@
           </div>
         </article>
 
-        <!-- Roar of Return (COMING SOON) -->
+        <!-- Rekindled Mural -->
         <article class="art-card">
           <div class="art-image">
-            <img src="images/art/logo-mudeizi.png"
-                 alt="Artwork coming soon">
+            <div class="art-slides">
+              <img src="images/art/rekindled-mural.jpg" alt="Rekindled mural, view 1">
+              <img src="images/art/rekindled-mural1.jpg" alt="Rekindled mural, view 2">
+              <img src="images/art/rekindled-mural2.jpg" alt="Rekindled mural, view 3">
+              <img src="images/art/rekindled-mural3.jpg" alt="Rekindled mural, view 4">
+            </div>
+            <span class="art-carousel-note">4 views</span>
           </div>
           <div class="art-body">
-            <h3 class="art-title">Roar of Return</h3>
+            <h3 class="art-title">Rekindled Mural</h3>
             <p class="art-meta">
-              2025 &nbsp;•&nbsp; Acrylic on canvas &nbsp;•&nbsp;<br />
-              <span>4 ft × 4 ft (121.9 × 121.9 cm)</span>
+              Mural project &nbsp;•&nbsp; Acrylic
             </p>
             <p class="art-description">
-              <em>Coming soon.</em><br />
-              A woman and a lion meet in a shared gaze, representing the moment of reclaiming self trust and personal authority. The work speaks to courage, remembrance, and the return to one’s authentic voice after periods of suppression or self doubt.
+              A commercial mural combining hand-painted artwork with a commissioned existing logo. The imagery brings warmth, movement, and renewed energy into the brand environment.
             </p>
             <div class="art-tags">
-              <span class="art-tag art-tag--highlight">Contemporary Art</span>
-              <span class="art-tag">Identity</span>
-              <span class="art-tag">Cultural Dialogue</span>
+              <span class="art-tag art-tag--highlight">Mural</span>
+              <span class="art-tag">Branding</span>
             </div>
           </div>
         </article>
 
-        <!-- Portrait Commissions (COMING SOON) -->
+        <!-- Planter -->
         <article class="art-card">
           <div class="art-image">
-            <img src="images/art/logo-mudeizi.png"
-                 alt="Artwork coming soon">
+            <div class="art-slides"><img src="images/art/planter.jpg" alt="Planter painting"></div>
           </div>
           <div class="art-body">
-            <h3 class="art-title">Portrait Commissions</h3>
+            <h3 class="art-title">Planter</h3>
             <p class="art-meta">
-              Custom work &nbsp;•&nbsp; Digital & traditional
+              Acrylic on canvas
             </p>
-            <p class="art-description">
-              <em>Coming soon.</em><br />
-              Bespoke portraits that honour real stories. Available in digital
-              or traditional formats, with options for symbolic elements woven
-              into the background.
-            </p>
-            <div class="art-tags">
-              <span class="art-tag art-tag--highlight">Commission</span>
-              <span class="art-tag">Portrait</span>
-            </div>
+            <p class="art-description">A study of care and cultivation, centred on a planter and the life growing from it.</p>
+            <div class="art-tags"><span class="art-tag art-tag--highlight">Painting</span><span class="art-tag">Nature</span></div>
           </div>
         </article>
+
+        <!-- Break the Silence -->
+        <article class="art-card">
+          <div class="art-image"><div class="art-slides"><img src="images/art/break-the-silence-mural.jpg" alt="Break the Silence mural, view 1"><img src="images/art/break-the-silence-mural1.jpg" alt="Break the Silence mural, view 2"></div><span class="art-carousel-note">2 views</span></div>
+          <div class="art-body"><h3 class="art-title">Break the Silence</h3><p class="art-meta">Mural project &nbsp;•&nbsp; Acrylic</p><p class="art-description">A mural about finding the courage to speak, be heard, and bring difficult experiences into the open.</p><div class="art-tags"><span class="art-tag art-tag--highlight">Mural</span><span class="art-tag">Awareness</span></div></div>
+        </article>
+
+        <!-- Teenage Pregnancy Mural -->
+        <article class="art-card">
+          <div class="art-image"><div class="art-slides"><img src="images/art/teenage-pregnancy-mural.jpg" alt="Teenage pregnancy awareness mural, view 1"><img src="images/art/teenage-pregnancy-mural1.jpg" alt="Teenage pregnancy awareness mural, view 2"></div><span class="art-carousel-note">2 views</span></div>
+          <div class="art-body"><h3 class="art-title">Teenage Pregnancy Mural</h3><p class="art-meta">MSF-sponsored project &nbsp;•&nbsp; Acrylic</p><p class="art-description">A hospital mural created for an MSF-sponsored project, using accessible visual storytelling to support awareness around teenage pregnancy.</p><div class="art-tags"><span class="art-tag art-tag--highlight">Mural</span><span class="art-tag">Public Awareness</span></div></div>
+        </article>
+
+        <!-- Break the Silence and remaining catalogue works -->
+        <article class="art-card"><div class="art-image"><div class="art-slides"><img src="images/art/sunset-walk.jpg" alt="Sunset Walk painting"><img src="images/art/sunset-walk1.jpg" alt="Sunset Walk painting, alternate view"></div><span class="art-carousel-note">2 views</span></div><div class="art-body"><h3 class="art-title">Sunset Walk</h3><p class="art-meta">Acrylic on canvas &nbsp;•&nbsp; <span>35 × 35 cm</span></p><p class="art-description">A quiet walk through warm evening light, capturing the stillness and colour of the setting sun.</p><div class="art-tags"><span class="art-tag art-tag--highlight">Painting</span><span class="art-tag">Landscape</span></div></div></article>
+        <article class="art-card"><div class="art-image"><div class="art-slides"><img src="images/art/kenyan-coastal-scene.jpg" alt="Kenyan Coastal Scene painting"></div></div><div class="art-body"><h3 class="art-title">Kenyan Coastal Scene</h3><p class="art-meta">Acrylic on canvas &nbsp;•&nbsp; <span>35 × 35 cm</span></p><p class="art-description">A coastal landscape shaped by bright skies, open water, and the distinctive atmosphere of the Kenyan coast.</p><div class="art-tags"><span class="art-tag art-tag--highlight">Painting</span><span class="art-tag">Landscape</span></div></div></article>
+        <article class="art-card"><div class="art-image"><div class="art-slides"><img src="images/art/crimson-bloom.jpg" alt="Crimson Bloom painting"></div></div><div class="art-body"><h3 class="art-title">Crimson Bloom</h3><p class="art-meta">Acrylic on canvas &nbsp;•&nbsp; <span>30 × 30 cm</span></p><p class="art-description">A vivid floral study exploring the presence and intensity of a bloom through rich crimson colour.</p><div class="art-tags"><span class="art-tag art-tag--highlight">Painting</span><span class="art-tag">Floral</span></div></div></article>
+        <article class="art-card"><div class="art-image"><div class="art-slides"><img src="images/art/light-glows.jpg" alt="Light Glows painting"></div></div><div class="art-body"><h3 class="art-title">Light Glows</h3><p class="art-meta">Acrylic on canvas &nbsp;•&nbsp; <span>35 × 35 cm</span></p><p class="art-description">A luminous scene focused on the way light gathers, softens, and changes the feeling of a moment.</p><div class="art-tags"><span class="art-tag art-tag--highlight">Painting</span><span class="art-tag">Light</span></div></div></article>
+        <article class="art-card"><div class="art-image"><div class="art-slides"><img src="images/art/together-at-dusk.jpg" alt="Together at Dusk painting"></div></div><div class="art-body"><h3 class="art-title">Together at Dusk</h3><p class="art-meta">Acrylic on canvas &nbsp;•&nbsp; <span>30 × 30 cm</span></p><p class="art-description">A shared evening moment that places connection and companionship within the calm of fading light.</p><div class="art-tags"><span class="art-tag art-tag--highlight">Painting</span><span class="art-tag">Connection</span></div></div></article>
+        <article class="art-card"><div class="art-image"><div class="art-slides"><img src="images/art/sweet-indulgence.jpg" alt="Sweet Indulgence painting"></div></div><div class="art-body"><h3 class="art-title">Sweet Indulgence</h3><p class="art-meta">Acrylic on canvas &nbsp;•&nbsp; <span>30 × 30 cm</span></p><p class="art-description">A playful still life celebrating colour, texture, and the small pleasures of giving in to something sweet.</p><div class="art-tags"><span class="art-tag art-tag--highlight">Painting</span><span class="art-tag">Still Life</span></div></div></article>
+        <article class="art-card"><div class="art-image"><div class="art-slides"><img src="images/art/red-classic.jpg" alt="Red Classic painting"></div></div><div class="art-body"><h3 class="art-title">Red Classic</h3><p class="art-meta">Acrylic on canvas</p><p class="art-description">A classic study built around the visual strength, warmth, and drama of red.</p><div class="art-tags"><span class="art-tag art-tag--highlight">Painting</span><span class="art-tag">Colour Study</span></div></div></article>
+        <article class="art-card"><div class="art-image"><div class="art-slides"><img src="images/art/home-by-water.jpg" alt="Home by Water painting"><img src="images/art/home-by-water1.jpg" alt="Home by Water painting, alternate view"></div><span class="art-carousel-note">2 views</span></div><div class="art-body"><h3 class="art-title">Home by Water</h3><p class="art-meta">Acrylic on canvas &nbsp;•&nbsp; <span>75 × 50 cm</span></p><p class="art-description">A peaceful home set beside water, reflecting the relationship between shelter, landscape, and belonging.</p><div class="art-tags"><span class="art-tag art-tag--highlight">Painting</span><span class="art-tag">Landscape</span></div></div></article>
+        <article class="art-card"><div class="art-image"><div class="art-slides"><img src="images/art/under-the-purple-tree.jpg" alt="Under the Purple Tree painting"><img src="images/art/under-the-purple-tree1.jpg" alt="Under the Purple Tree painting, alternate view"></div><span class="art-carousel-note">2 views</span></div><div class="art-body"><h3 class="art-title">Under the Purple Tree</h3><p class="art-meta">Acrylic on canvas</p><p class="art-description">A reflective scene beneath a flowering purple tree, inviting a pause within a richly coloured landscape.</p><div class="art-tags"><span class="art-tag art-tag--highlight">Painting</span><span class="art-tag">Landscape</span></div></div></article>
+        <article class="art-card"><div class="art-image"><div class="art-slides"><img src="images/art/grandmother-portrait.jpg" alt="Grandmother Portrait"></div></div><div class="art-body"><h3 class="art-title">Grandmother Portrait</h3><p class="art-meta">Pencil and charcoal on paper &nbsp;•&nbsp; <span>A4</span></p><p class="art-description">A portrait study honouring the character, presence, and quiet history held in an elder’s face.</p><div class="art-tags"><span class="art-tag art-tag--highlight">Portrait</span><span class="art-tag">Drawing</span></div></div></article>
+        <article class="art-card"><div class="art-image"><div class="art-slides"><img src="images/art/child-portrait1.jpg" alt="Child Portrait 1"><img src="images/art/child-portrait2.jpg" alt="Child Portrait 2"><img src="images/art/child-portrait3.jpg" alt="Child Portrait 3"></div><span class="art-carousel-note">3 portraits</span></div><div class="art-body"><h3 class="art-title">Child Portraits</h3><p class="art-meta">Pencil and charcoal on paper &nbsp;•&nbsp; <span>A4</span></p><p class="art-description">A collection of child portrait studies focused on expression, personality, and the small details that make each face distinct.</p><div class="art-tags"><span class="art-tag art-tag--highlight">Portrait</span><span class="art-tag">Drawing</span></div></div></article>
 
       </div>
     </div>
@@ -344,5 +357,42 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
   <script src="script.js"></script>
+  <script>
+    document.querySelectorAll('.art-slides').forEach(function (slides) {
+      if (slides.children.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+      }
+
+      var currentSlide = 0;
+      var isPaused = false;
+
+      function showNextSlide() {
+        if (isPaused) {
+          return;
+        }
+
+        currentSlide = (currentSlide + 1) % slides.children.length;
+        slides.scrollTo({
+          left: slides.clientWidth * currentSlide,
+          behavior: 'smooth'
+        });
+      }
+
+      slides.addEventListener('mouseenter', function () {
+        isPaused = true;
+      });
+      slides.addEventListener('mouseleave', function () {
+        isPaused = false;
+      });
+      slides.addEventListener('focusin', function () {
+        isPaused = true;
+      });
+      slides.addEventListener('focusout', function () {
+        isPaused = false;
+      });
+
+      window.setInterval(showNextSlide, 3500);
+    });
+  </script>
 </body>
 </html>
