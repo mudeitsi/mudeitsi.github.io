@@ -25,6 +25,8 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: var(--teal) #111;
+  scrollbar-width: thin;
 }
 
 body {
@@ -45,11 +47,11 @@ body {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--violet), var(--sand), var(--teal));
+  background: var(--teal);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, var(--charcoal), var(--sand), var(--gold));
+  background: var(--violet);
 }
 
 /* Loader */
